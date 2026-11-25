@@ -389,14 +389,72 @@ button{cursor:pointer}
 }
 
 </style>
+<style>.letter p, #letterText p {white-space: pre-line;} .project-card p, .experience-card .desc {overflow: visible; max-height: none; -webkit-line-clamp: unset; line-height: 1.75; overflow-wrap: anywhere;} .project-card h3 {overflow-wrap: anywhere;} .stat strong {overflow-wrap: anywhere;}</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%20fill%3D%22none%22%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2262%22%20height%3D%2262%22%20rx%3D%2213%22%20fill%3D%22%23102b3a%22%20stroke%3D%22%23315666%22/%3E%3Cpath%20d%3D%22M12%2042V16h12c7%200%2011%204%2011%2010s-4%2010-11%2010H12m12%200%2010%2011M35%2042l12-26%2012%2026M40%2032h14%22%20stroke%3D%22%23f1f7fa%22%20stroke-width%3D%223.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M12%2053h12l11-5%2012%201%2010-7%22%20stroke%3D%22%2354e0c5%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%2257%22%20cy%3D%2242%22%20r%3D%223%22%20fill%3D%22%2354e0c5%22/%3E%3C/svg%3E">
+<style>
+@media screen {
+:root{--bg:#0b141e;--bg-2:#101d29;--panel:#111f2b;--panel-2:#152633;--line:#29404f;--line-2:#4db5ac;--text:#edf3f7;--muted:#b3c4cf;--dim:#91a9b8;--cyan:#62dfca;--blue:#8db6ef;--violet:#8db6ef;--green:#62dfca;--radius:16px;--radius-md:14px;--radius-sm:10px;--shadow:none;--shadow-2:none;--container:1180px}
+body::before{background:linear-gradient(145deg,#0b141e,#102330 45%,#0b141e);transition:none}body::after{opacity:.26;background-size:48px 48px,48px 48px,12px 12px,12px 12px;mask-image:linear-gradient(#000,transparent 65%)}.site-bg,#matrixCanvas{display:none}
+.topbar{top:0;width:100%;border-radius:0;border:0;border-bottom:1px solid var(--line);background:#0d1924f5;box-shadow:none;padding:12px max(20px,calc((100% - 1240px)/2));gap:12px;backdrop-filter:blur(12px)}.topbar::before{display:none}.brand-mark{background:none;box-shadow:none;border-radius:12px;width:48px;height:48px}.brand-mark::after{display:none}.brand-mark svg{width:100%;height:100%}.brand-copy strong{letter-spacing:.015em;text-transform:none;font-size:15px}.brand-copy small{font-size:10px;font-weight:500;margin-top:4px}.nav{gap:0}.nav a{font-size:11px;letter-spacing:0;text-transform:none;padding:0 9px;border-radius:6px;font-weight:600;white-space:nowrap}.nav a:hover,.nav a.active{background:#203943;color:var(--cyan);box-shadow:none;transform:none}.language-switch{border-radius:8px;background:#142330}.lang-btn{border-radius:5px;letter-spacing:0;padding:7px 8px}.lang-btn.active{background:var(--cyan);box-shadow:none}
+.hero{min-height:0;padding:132px 0 66px}.hero::before,.hero::after,.profile-shell::before{display:none}.hero-grid{grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);gap:44px;align-items:start}.hero h1{font-size:clamp(48px,6.2vw,88px);line-height:1.02;letter-spacing:-.055em;color:var(--text);background:none;animation:none;text-shadow:none;font-weight:800}.kicker{letter-spacing:.13em;font-size:11px;font-weight:700}.kicker::before{width:20px;background:var(--cyan)}.lead{font-size:clamp(17px,1.9vw,23px);line-height:1.5;color:var(--cyan);font-weight:600}.hero-desc{font-size:15px;line-height:1.8}.btn{border-radius:8px;font-weight:700;letter-spacing:0;min-height:44px}.btn-primary{background:var(--cyan);box-shadow:none}.btn-secondary,.btn-ghost{box-shadow:none}.btn:hover{transform:translateY(-2px);box-shadow:none}.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;max-width:none}.stat{background:#132431;border:1px solid var(--line);border-radius:10px;padding:14px;min-height:85px;box-shadow:none}.stat::before{display:none}.stat strong{color:var(--cyan);background:none;font-size:clamp(18px,2vw,27px);font-weight:750;line-height:1.15}.stat span{font-size:11px;letter-spacing:0;text-transform:none;color:var(--muted);font-weight:500;line-height:1.35}
+.profile-card,.terminal-card,.strength-card,.letter-card,.contact-card,.experience-card,.project-card,.skill-card,.edu-card,.cert-card{background:#111f2b;border:1px solid var(--line);border-radius:14px;box-shadow:none;backdrop-filter:none}.profile-card{padding:12px}.profile-card::before,.profile-frame::after{display:none}.profile-frame{aspect-ratio:5/4;border-radius:9px;box-shadow:none}.profile-frame img{object-position:center 24%;filter:none}.profile-meta{position:static;margin:12px 0 0;padding:9px 4px;border:0;background:none;backdrop-filter:none}.profile-card:hover{transform:none}.pulse{animation:none}.terminal-card{overflow:hidden}.pipeline{padding:10px 14px 0;background:#10232f}.pipeline svg{display:block;width:100%;height:auto}.terminal-head{background:#142633;height:34px}.terminal-head span{background:#587481!important;width:6px;height:6px}.terminal-card code{font-size:11px;padding:12px 16px;line-height:1.8;overflow-wrap:anywhere}.terminal-card code span:last-child::after{display:none}
+.section{padding:68px 0}.hero.section{padding-top:132px}.section-alt{background:#0e1a25;border-color:var(--line)}.section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-.035em;font-weight:750}.section-head{margin-bottom:26px}.section-head p:not(.kicker){font-size:15px}.experience-card{padding:24px;grid-template-columns:180px 1fr;gap:20px}.experience-card::before{font-size:36px;color:#233b49}.experience-card::after{background:var(--cyan);box-shadow:none;width:2px}.experience-card:hover,.project-card:hover,.skill-card:hover,.edu-card:hover,.cert-card:hover,.contact-card:hover{transform:none;background:#152633;border-color:var(--line-2);box-shadow:none}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-card{padding:24px;min-height:0}.project-card::before,.project-card::after{display:none}.project-card h3{font-size:24px;line-height:1.2;margin:16px 0 10px}.project-card p,.experience-card .desc{line-height:1.8;font-size:14px}.project-card .kind,.cert-type{border-radius:5px;letter-spacing:.04em}.project-card a{border-radius:7px;background:#193640;font-weight:650}.tag,.pill{border-radius:6px}.skill-card{padding:15px}.skill-top{margin:0;font-size:13px;font-weight:600;align-items:flex-start}.skill-pct{font-size:11px;font-weight:650;white-space:normal;text-align:right}.education-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.edu-tag{color:var(--cyan);font-size:25px;letter-spacing:0}.edu-card::before{background:var(--cyan);height:2px}.cert-tools{border-radius:10px}.cert-card{min-height:150px}.cert-card h3{font-size:15px}.letter-card{max-width:920px}.letter-card::before{background:#152633;padding-left:20px}.letter-card::after{display:none}#letterText p{line-height:1.85}.contact-icon{border-radius:9px;background:#193640}.reveal{opacity:1;transform:none;transition:none}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+@media(max-width:1120px){.topbar{grid-template-columns:auto auto auto;justify-content:space-between}.nav{max-height:70vh;overflow:auto}.hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(260px,.8fr);gap:24px}.profile-shell{max-width:none;margin:0}.skills-layout,.contact-layout{grid-template-columns:1fr}}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.profile-shell{grid-template-columns:1fr 1fr;align-items:start}.experience-card{grid-template-columns:1fr;gap:8px}.education-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero.section{padding-top:112px}}
+@media(max-width:620px){.topbar{padding:9px 10px;gap:6px}.brand{gap:6px}.brand-mark{width:36px;height:36px}.brand-copy strong{font-size:11px}.menu-btn{width:34px;height:34px;border-radius:7px}.language-switch{gap:1px;padding:3px}.lang-btn{padding:6px;font-size:10px}.hero h1{font-size:clamp(42px,12vw,64px)}.hero.section{padding-top:100px}.hero-actions .btn{width:auto;flex:1 1 130px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.profile-shell,.project-grid,.skill-grid,.education-grid,.cert-grid,.contact-grid{grid-template-columns:1fr}.profile-frame{aspect-ratio:5/4}.section{padding:46px 0}.experience-card,.project-card{padding:17px}.stat{padding:12px}.section-head h2{font-size:32px}.profile-meta{margin:10px 0 0}}
+}
+@media print{.pipeline{display:none!important}}
+</style>
+<style id="analytics-motion">
+@media screen and (prefers-reduced-motion:no-preference){
+  body::before{background:radial-gradient(620px circle at var(--mx) var(--my),rgba(98,223,202,.13),transparent 65%),radial-gradient(900px circle at 88% 8%,rgba(83,139,208,.13),transparent 65%),linear-gradient(145deg,#0b141e,#102330 45%,#0b141e)}
+  #matrixCanvas{display:block;opacity:.68;mix-blend-mode:screen}
+  .site-bg{display:block;background:#0b141e}.site-bg span{opacity:.13;filter:blur(65px)}
+  .hero h1{background:linear-gradient(110deg,#edf3f7 15%,#a6e9e1 45%,#edf3f7 72%);background-size:220% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:shineText 8s ease-in-out infinite alternate}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}.reveal.in{opacity:1;transform:none}
+  .experience-card,.project-card,.skill-card,.edu-card,.cert-card,.contact-card,.profile-card,.stat{transition:transform .28s ease,background .28s ease,border-color .28s ease,box-shadow .28s ease,opacity .65s ease}
+  .experience-card:hover,.project-card:hover,.skill-card:hover,.edu-card:hover,.cert-card:hover,.contact-card:hover,.stat:hover{transform:translateY(-4px);box-shadow:0 12px 30px #0003,0 0 20px #62dfca12;border-color:#4db5ac}
+  .project-card::before{display:block;opacity:.45;background:radial-gradient(350px circle at var(--card-x,50%) var(--card-y,50%),#62dfca22,transparent 70%);pointer-events:none}
+  .brand-mark{transition:transform .35s ease,filter .35s ease;animation:raGlow 5s ease-in-out infinite}.brand:hover .brand-mark{transform:scale(1.08)}
+  .pulse{animation:statusPulse 2.5s ease-out infinite}.terminal-card code span:last-child::after{display:inline-block}
+  .pipeline .data-packet{animation:packetFlow 3.2s ease-in-out infinite}.pipeline .data-packet.second{animation-delay:1.6s}
+  .stat{animation:statEnter .65s both}.stat:nth-child(2){animation-delay:.12s}.stat:nth-child(3){animation-delay:.24s}.stat:nth-child(4){animation-delay:.36s}
+  @keyframes raGlow{0%,100%{filter:drop-shadow(0 0 0 #62dfca00)}50%{filter:drop-shadow(0 0 7px #62dfca65)}}
+  @keyframes statusPulse{0%{box-shadow:0 0 0 0 #62dfca55}75%,100%{box-shadow:0 0 0 12px #62dfca00}}
+  @keyframes packetFlow{0%{transform:translateX(0);opacity:0}12%{opacity:1}85%{opacity:1}100%{transform:translateX(145px);opacity:0}}
+  @keyframes statEnter{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+}
+
+/* Additional data-analytics motion layer */
+.analytics-console{position:relative;isolation:isolate;overflow:hidden;padding:18px;border:1px solid #294b58;border-radius:14px;background:linear-gradient(145deg,#122532f2,#0d1b27f5);box-shadow:0 18px 48px #0003}
+.analytics-console::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,transparent 12%,#62dfca0b 46%,transparent 70%);transform:translateX(-120%);animation:consoleSweep 8s ease-in-out infinite}
+.console-topline,.console-topline>div,.console-heading,.console-chart-label,.chart-axis,.mini-axis,.console-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.console-topline{padding-bottom:13px;border-bottom:1px solid #29404f;color:#a9c2ce;font-size:9px;font-weight:800;letter-spacing:.13em}
+.console-topline>div{justify-content:flex-start}.console-live-dot,.foot-pulse{width:7px;height:7px;flex:none;border-radius:50%;background:#62dfca;box-shadow:0 0 0 4px #62dfca1b;animation:consolePulse 2s ease-out infinite}
+.console-status{color:#62dfca;font-size:8px}.console-heading{padding:15px 0 12px}.console-heading strong{display:block;color:#eff8fa;font-size:16px;letter-spacing:-.025em}.console-heading small{display:block;margin-top:2px;color:#91a9b8;font-size:10px}.console-spark-icon{color:#62dfca;font-size:32px;line-height:1;animation:sparkFloat 3s ease-in-out infinite}
+.console-chart-wrap,.console-mini-panel{padding:12px;border:1px solid #29404f;border-radius:9px;background:#0b1924a8}.console-chart-label{color:#d8e9ed;font-size:10px;font-weight:700}.console-chart-label span+span{color:#75939e;font-size:8px;letter-spacing:.1em}.console-chart{display:block;width:100%;height:auto;margin-top:8px;overflow:visible}.chart-grid-lines{stroke:#35505b;stroke-width:.7;stroke-dasharray:2 5;opacity:.72}.chart-area{fill:url(#trendFill);opacity:.8}.chart-line{fill:none;stroke:url(#trendStroke);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;animation:chartDraw 4.5s cubic-bezier(.45,0,.2,1) infinite alternate}.chart-point{fill:#d4fff7;stroke:#62dfca;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pointPop 2.4s ease-in-out infinite}.point-b{animation-delay:.35s}.point-c{animation-delay:.7s}.chart-scan{fill:#eafffc;stroke:#62dfca;stroke-width:3;filter:drop-shadow(0 0 5px #62dfca);animation:scanAlong 4.5s ease-in-out infinite alternate}.chart-axis,.mini-axis{color:#75939e;font-size:7px;letter-spacing:.08em}.console-bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}.console-mini-panel{min-width:0;padding:11px}.mini-bars{height:54px;display:flex;align-items:flex-end;gap:5px;margin-top:12px;padding:0 2px}.mini-bars i{display:block;flex:1;height:var(--bar);border-radius:3px 3px 1px 1px;background:linear-gradient(180deg,#a6e9e1,#4b9b9c);transform:scaleY(.08);transform-origin:bottom;animation:barRise 2.8s cubic-bezier(.2,.7,.2,1) infinite alternate;animation-delay:var(--delay);box-shadow:0 0 10px #62dfca18}.mini-axis{margin-top:5px}.pipeline-steps{display:flex;align-items:center;justify-content:space-between;gap:4px;margin:20px 0 11px}.pipeline-steps span{padding:6px 7px;border:1px solid #38606a;border-radius:5px;background:#16313b;color:#bff9ee;font-size:8px;font-weight:850;letter-spacing:.08em;animation:stepGlow 3.6s ease-in-out infinite}.pipeline-steps span:nth-of-type(2){animation-delay:1.2s}.pipeline-steps span:nth-of-type(3){animation-delay:2.4s}.pipeline-steps b{position:relative;flex:1;height:1px;min-width:8px;background:#45616a;overflow:hidden}.pipeline-steps b::after{content:"";position:absolute;inset:0 auto 0 0;width:45%;background:#62dfca;box-shadow:0 0 7px #62dfca;animation:flowLine 1.8s linear infinite}.pipeline-steps b:nth-of-type(2)::after{animation-delay:.9s}.pipeline-caption{color:#8ea8b4;font-size:8px;text-align:center}.console-foot{justify-content:flex-start;flex-wrap:wrap;margin-top:13px;color:#7e9aa5;font-size:8px;font-weight:750;letter-spacing:.09em}.foot-pulse{width:5px;height:5px}.foot-divider{color:#45616a}
+@keyframes consoleSweep{0%,35%{transform:translateX(-120%)}70%,100%{transform:translateX(120%)}}
+@keyframes consolePulse{0%{box-shadow:0 0 0 0 #62dfca66}75%,100%{box-shadow:0 0 0 8px #62dfca00}}
+@keyframes sparkFloat{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-4px) rotate(8deg)}}
+@keyframes chartDraw{0%{stroke-dashoffset:100}72%,100%{stroke-dashoffset:0}}
+@keyframes pointPop{0%,100%{opacity:.55;transform:scale(.8)}50%{opacity:1;transform:scale(1.5)}}
+@keyframes scanAlong{0%{transform:translate(0,0);opacity:.35}10%{opacity:1}100%{transform:translate(344px,-77px);opacity:.95}}
+@keyframes barRise{0%{transform:scaleY(.12);filter:saturate(.7)}70%,100%{transform:scaleY(1);filter:saturate(1.2)}}
+@keyframes stepGlow{0%,100%{border-color:#38606a;box-shadow:0 0 0 #62dfca00}50%{border-color:#62dfca;box-shadow:0 0 12px #62dfca25}}
+@keyframes flowLine{0%{transform:translateX(-110%)}100%{transform:translateX(250%)}}
+@media(max-width:620px){.analytics-console{padding:13px}.console-bottom-grid{gap:7px}.console-mini-panel{padding:9px}.console-chart-wrap{padding:10px}.console-foot{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.analytics-console::before,.console-live-dot,.foot-pulse,.console-spark-icon,.chart-line,.chart-point,.chart-scan,.mini-bars i,.pipeline-steps span,.pipeline-steps b::after{animation:none!important}.chart-line{stroke-dashoffset:0}.mini-bars i{transform:scaleY(1)}}
+@media print{.analytics-console,#matrixCanvas{display:none!important}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
 
   <header class="topbar" id="top">
     <a class="brand" href="#home" aria-label="Rasim Abdullayev portfolio home">
-      <span class="brand-mark">RA</span>
+      <span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><rect x="1" y="1" width="62" height="62" rx="13" fill="#102b3a" stroke="#315666"/><path d="M12 42V16h12c7 0 11 4 11 10s-4 10-11 10H12m12 0 10 11M35 42l12-26 12 26M40 32h14" stroke="#f1f7fa" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 53h12l11-5 12 1 10-7" stroke="#54e0c5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="57" cy="42" r="3" fill="#54e0c5"/></svg></span>
       <span class="brand-copy"><strong>Rasim Abdullayev</strong><small data-ui="brand_role">IT Portfolio · Data & Web Systems</small></span>
     </a>
 
@@ -444,9 +502,44 @@ button{cursor:pointer}
             </div>
           </div>
           <div class="terminal-card" aria-label="Portfolio status">
-            <div class="terminal-head"><span></span><span></span><span></span><strong data-ui="terminal_title">portfolio.system</strong></div>
+            <div class="pipeline" aria-hidden="true"><svg viewBox="0 0 330 104" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#274553" stroke-dasharray="3 4"><path d="M20 20H310M20 52H310M20 84H310"/></g><g stroke="#5bd8c5" stroke-width="1.6"><ellipse cx="42" cy="34" rx="19" ry="7"/><path d="M23 34v31c0 10 38 10 38 0V34M23 49c0 10 38 10 38 0M61 52h42m-5-5 5 5-5 5M136 35l23 17-23 17-23-17 23-17Zm23 17h48m-5-5 5 5-5 5"/><path d="M228 73V30m0 43h76" stroke="#7796a5"/><path d="M238 65V55h10v10m10 0V45h10v20m10 0V35h10v30" fill="#5bd8c5" fill-opacity=".3"/><path d="m237 46 24-13 25-12 12 4" stroke-linecap="round"/></g><g fill="#a5fff0"><circle class="data-packet" cx="63" cy="52" r="2.5"/><circle class="data-packet second" cx="63" cy="52" r="2.5"/></g><g fill="#9bb3c2" font-size="9" font-family="monospace" text-anchor="middle"><text x="42" y="94">DATA</text><text x="136" y="94">SQL / AI</text><text x="265" y="94">INSIGHTS</text></g></svg></div><div class="terminal-head"><span></span><span></span><span></span><strong data-ui="terminal_title">portfolio.system</strong></div>
             <code><span data-ui="terminal_1"></span><br><span data-ui="terminal_2"></span><br><span data-ui="terminal_3"></span><br><span data-ui="terminal_4"></span></code>
           </div>
+          <section class="analytics-console" aria-label="Animated data analytics visualization">
+            <div class="console-topline">
+              <div><span class="console-live-dot"></span><span class="console-eyebrow">ANALYTICS WORKSPACE</span></div>
+              <span class="console-status">LIVE VISUAL</span>
+            </div>
+            <div class="console-heading">
+              <div><strong>Data signals</strong><small>From raw input to actionable insight</small></div>
+              <span class="console-spark-icon" aria-hidden="true">⌁</span>
+            </div>
+            <div class="console-chart-wrap">
+              <div class="console-chart-label"><span>Trend analysis</span><span>DATA SERIES · A</span></div>
+              <svg class="console-chart" viewBox="0 0 360 128" role="img" aria-label="Illustrative animated trend line chart">
+                <defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#62dfca" stop-opacity=".28"/><stop offset="1" stop-color="#62dfca" stop-opacity="0"/></linearGradient><linearGradient id="trendStroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8db6ef"/><stop offset=".55" stop-color="#62dfca"/><stop offset="1" stop-color="#d4fff7"/></linearGradient></defs>
+                <g class="chart-grid-lines"><path d="M8 18H352M8 48H352M8 78H352M8 108H352"/><path d="M8 8V112M94 8V112M180 8V112M266 8V112M352 8V112"/></g>
+                <path class="chart-area" d="M8 91 C30 84 38 66 62 72 S98 89 120 62 S156 52 180 63 S214 34 238 44 S274 61 296 30 S330 35 352 14 L352 112 L8 112Z"/>
+                <path class="chart-line" pathLength="100" d="M8 91 C30 84 38 66 62 72 S98 89 120 62 S156 52 180 63 S214 34 238 44 S274 61 296 30 S330 35 352 14"/>
+                <circle class="chart-point point-a" cx="120" cy="62" r="3.5"/><circle class="chart-point point-b" cx="238" cy="44" r="3.5"/><circle class="chart-point point-c" cx="352" cy="14" r="3.5"/>
+                <circle class="chart-scan" cx="8" cy="91" r="5"/>
+              </svg>
+              <div class="chart-axis"><span>INPUT</span><span>PROCESS</span><span>OUTPUT</span></div>
+            </div>
+            <div class="console-bottom-grid">
+              <div class="console-mini-panel">
+                <div class="console-chart-label"><span>Data distribution</span><span>VISUAL</span></div>
+                <div class="mini-bars" aria-hidden="true"><i style="--bar:38%;--delay:0s"></i><i style="--bar:62%;--delay:.12s"></i><i style="--bar:48%;--delay:.24s"></i><i style="--bar:82%;--delay:.36s"></i><i style="--bar:68%;--delay:.48s"></i><i style="--bar:96%;--delay:.6s"></i><i style="--bar:74%;--delay:.72s"></i><i style="--bar:88%;--delay:.84s"></i></div>
+                <div class="mini-axis"><span>LOW</span><span>HIGH</span></div>
+              </div>
+              <div class="console-mini-panel pipeline-mini">
+                <div class="console-chart-label"><span>Data pipeline</span><span>FLOW</span></div>
+                <div class="pipeline-steps"><span>RAW</span><b></b><span>SQL</span><b></b><span>BI</span></div>
+                <div class="pipeline-caption">Collect · Transform · Interpret</div>
+              </div>
+            </div>
+            <div class="console-foot"><span class="foot-pulse"></span> VISUAL DEMONSTRATION <span class="foot-divider">/</span> EXCEL · SQL · POWER BI · AI</div>
+          </section>
         </aside>
       </div>
     </section>
@@ -539,9 +632,9 @@ const profile = {
         "ru": "Координатор контроля доступа"
       },
       "desc": {
-        "az": "Giriş məntəqələrinin idarə edilməsi, könüllülərin koordinasiyası, bilet skanerləri və bilet sistemlərində texniki problemlərin həlli, tamaşaçı axınına nəzarət.",
-        "en": "Coordinated access control, supervised volunteers, resolved ticket scanner and ticketing system issues, assisted visitors and monitored spectator flow.",
-        "ru": "Координировал контроль доступа и волонтёров, устранял проблемы сканеров и билетных систем, помогал посетителям и контролировал поток зрителей."
+        "en": "Coordinated access control operations across designated entry points during the Formula 1 event. Monitored entry points and ensured smooth access procedures for spectators, staff, and authorized personnel. Coordinated volunteers, assigned responsibilities, and supervised operational activities. Identified and resolved technical issues related to ticket scanners and ticketing systems. Assisted visitors with ticket validation and access-related enquiries. Monitored spectator flow and supported efficient crowd management throughout the event. Ensured access procedures were carried out efficiently and in accordance with event requirements.",
+        "az": "Formula 1 tədbiri zamanı müəyyən edilmiş giriş məntəqələrində girişə nəzarət əməliyyatlarını koordinasiya etmişəm. Giriş məntəqələrinə nəzarət etmiş, tamaşaçıların, əməkdaşların və səlahiyyətli şəxslərin maneəsiz girişini təmin etmişəm. Könüllülərin işini əlaqələndirmiş, vəzifələri bölüşdürmüş və əməliyyat fəaliyyətinə nəzarət etmişəm. Bilet skanerləri və bilet sistemləri ilə bağlı texniki problemləri müəyyən edərək həll etmişəm. Ziyarətçilərə biletlərin yoxlanılması və girişlə bağlı suallar üzrə kömək göstərmişəm. Tədbir boyunca tamaşaçı axınına nəzarət etmiş və izdihamın səmərəli idarə olunmasına dəstək vermişəm. Giriş prosedurlarının tədbirin tələblərinə uyğun və səmərəli icrasını təmin etmişəm.",
+        "ru": "Координировал контроль доступа на выделенных входных пунктах во время мероприятия Formula 1. Контролировал входные пункты и обеспечивал беспрепятственный доступ зрителей, сотрудников и уполномоченных лиц. Координировал волонтёров, распределял обязанности и контролировал операционную деятельность. Выявлял и устранял технические проблемы билетных сканеров и билетных систем. Помогал посетителям с проверкой билетов и вопросами доступа. Контролировал поток зрителей и содействовал эффективному управлению им на протяжении мероприятия. Обеспечивал эффективное выполнение процедур доступа в соответствии с требованиями мероприятия."
       }
     },
     {
@@ -561,9 +654,9 @@ const profile = {
         "ru": "Менеджер трибун | Спортивная презентация"
       },
       "desc": {
-        "az": "Matç günlərində tribuna əməliyyatlarının, matçöncəsi və matç zamanı təqdimat fəaliyyətlərinin koordinasiyası, təşkilati problemlərin həlli və tamaşaçı təcrübəsinin dəstəklənməsi.",
-        "en": "Managed tribune operations on match days, coordinated pre-match and in-match presentation activities, resolved organizational issues and supported the spectator experience.",
-        "ru": "Управлял работой трибун в дни матчей, координировал презентационные активности до и во время матчей, решал организационные вопросы и обеспечивал комфорт зрителей."
+        "en": "Worked as a Tribune Manager within the Sports Presentation Team during CEV Trendyol EuroVolley 2026 in Baku. Managed and coordinated tribune operations on match days. Oversaw organizational activities and ensured a well-coordinated spectator experience. Coordinated pre-match and in-match presentation activities. Collaborated closely with the Sports Presentation Team and event operations staff. Ensured operational activities were carried out according to established schedules and event requirements. Addressed organizational issues during events and supported smooth operational workflow.",
+        "az": "Bakıda keçirilən CEV Trendyol EuroVolley 2026 zamanı idman təqdimatı komandasında tribuna meneceri kimi çalışmışam. Matç günlərində tribunaların fəaliyyətini idarə və koordinasiya etmişəm. Təşkilati fəaliyyətə nəzarət etmiş və tamaşaçılar üçün ahəngdar xidmətin göstərilməsini təmin etmişəm. Matçdan əvvəl və matç zamanı təqdimat fəaliyyətlərini əlaqələndirmişəm. İdman təqdimatı komandası və tədbirin əməliyyat heyəti ilə sıx əməkdaşlıq etmişəm. Əməliyyatların müəyyən edilmiş qrafiklərə və tədbir tələblərinə uyğun icrasını təmin etmişəm. Təşkilati problemləri həll etmiş və iş prosesinin fasiləsiz davam etməsinə dəstək vermişəm.",
+        "ru": "Работал менеджером трибун в команде спортивной презентации на CEV Trendyol EuroVolley 2026 в Баку. Управлял и координировал работу трибун в дни матчей. Контролировал организационную деятельность и обеспечивал слаженное обслуживание зрителей. Координировал презентационные мероприятия до и во время матчей. Тесно сотрудничал с командой спортивной презентации и операционным персоналом. Обеспечивал выполнение операций согласно установленным графикам и требованиям мероприятия. Решал организационные вопросы и поддерживал бесперебойный рабочий процесс."
       }
     },
     {
@@ -583,16 +676,16 @@ const profile = {
         "ru": "Стажёр по аналитике и обработке данных"
       },
       "desc": {
-        "az": "Excel, SQL, Power BI və Python ilə məlumatların emalı və analizi; AI prompt engineering, veb-saytlardan avtomatlaşdırılmış məlumat çıxarılması, AI əsaslı verilənlər bazaları, veb tətbiqlər və avtonom AI agentləri üzrə praktiki iş.",
-        "en": "Performed data processing and analysis using Excel, SQL, Power BI and Python. Worked on AI prompt engineering, automated web data extraction, AI-powered databases, web applications and autonomous AI agents.",
-        "ru": "Обрабатывал и анализировал данные с помощью Excel, SQL, Power BI и Python. Работал с prompt engineering, автоматизированным извлечением веб-данных, базами данных и веб-приложениями на базе ИИ, автономными ИИ-агентами."
+        "en": "During my internship, I gained hands-on experience in artificial intelligence (AI), web development, and data analytics, working on practical projects involving automation, data processing, and application development. AI and web technologies: Developed prompt engineering skills for AI models. Worked on automated data extraction from websites. Built AI-powered databases and web applications. Designed and implemented AI agents capable of performing autonomous tasks. Developed three websites, including cvyarat.online, which is currently actively used. Data analytics: Performed data analysis tasks using Microsoft Excel, SQL, Power BI, and Python. Worked with data processing, analysis, and interpretation. Applied analytical methods to extract meaningful insights from data. Developed practical skills in data analytics and business intelligence.",
+        "az": "Təcrübə proqramı zamanı avtomatlaşdırma, məlumatların emalı və tətbiqlərin hazırlanması üzrə praktiki layihələrdə iştirak edərək süni intellekt, veb proqramlaşdırma və məlumat analitikası sahələrində təcrübə qazanmışam. Süni intellekt və veb texnologiyaları: AI modelləri üçün sorğuların hazırlanması (prompt engineering) bacarıqlarımı inkişaf etdirmişəm. Veb-saytlardan məlumatların avtomatlaşdırılmış şəkildə çıxarılması üzərində çalışmışam. Süni intellekt əsaslı verilənlər bazaları və veb tətbiqlər hazırlamışam. Müstəqil tapşırıqları icra edə bilən AI agentləri layihələndirmiş və tətbiq etmişəm. Hazırda aktiv istifadə olunan cvyarat.online da daxil olmaqla üç veb-sayt hazırlamışam. Məlumat analitikası: Microsoft Excel, SQL, Power BI və Python vasitəsilə analitik tapşırıqları yerinə yetirmişəm. Məlumatların emalı, təhlili və şərhi ilə məşğul olmuşam. Məlumatlardan faydalı nəticələr çıxarmaq üçün analitik metodlar tətbiq etmişəm. Məlumat analitikası və biznes analitikası üzrə praktiki bacarıqlar qazanmışam.",
+        "ru": "Во время стажировки получил практический опыт в области искусственного интеллекта (ИИ), веб-разработки и аналитики данных, участвуя в проектах по автоматизации, обработке данных и разработке приложений. ИИ и веб-технологии: развивал навыки составления запросов для моделей ИИ. Работал над автоматизированным извлечением данных с сайтов. Создавал базы данных и веб-приложения на основе ИИ. Проектировал и внедрял ИИ-агентов, способных выполнять автономные задачи. Разработал три сайта, включая активно используемый cvyarat.online. Аналитика данных: выполнял аналитические задачи с помощью Microsoft Excel, SQL, Power BI и Python. Занимался обработкой, анализом и интерпретацией данных. Применял аналитические методы для получения полезных выводов. Развивал практические навыки аналитики данных и бизнес-аналитики."
       }
     },
     {
       "company": {
-        "az": "İ TİCKET — CIS Games 2025",
-        "en": "İ TİCKET — CIS Games 2025",
-        "ru": "İ TİCKET — Игры СНГ 2025"
+        "en": "iTicket — 3rd CIS Games 2025",
+        "az": "iTicket — 3-cü MDB Oyunları 2025",
+        "ru": "iTicket — III Игры СНГ 2025"
       },
       "period": {
         "az": "09.2025 — 10.2025",
@@ -605,9 +698,9 @@ const profile = {
         "ru": "Координатор билетных операций на площадке"
       },
       "desc": {
-        "az": "3-cü MDB Oyunlarında bilet satışına və kassalara nəzarət, gündəlik satış və maliyyə hesabatları, bilet yoxlanışı və könüllülərin koordinasiyası.",
-        "en": "Managed venue ticket sales and cashier operations, prepared daily ticket sales and financial reports, coordinated ticket validation and supervised volunteers during the 3rd CIS Games.",
-        "ru": "Управлял продажей билетов и работой касс, готовил ежедневные отчёты о продажах и финансовые отчёты, координировал проверку билетов и волонтёров на III Играх СНГ."
+        "en": "Responsible for managing and coordinating ticketing operations at the assigned venue during the 3rd CIS Games. Managed ticket sales and supervised cashier operations within the assigned venue. Prepared daily ticket sales and financial reports. Organized and coordinated ticket validation operations at venue entrances. Supervised, coordinated, and motivated volunteers, ensuring effective task allocation and workflow. Monitored daily ticketing operations to ensure accuracy, efficiency, and smooth service delivery. Ensured a professional and seamless ticketing experience for spectators and guests.",
+        "az": "3-cü MDB Oyunları zamanı təyin olunmuş məkanda bilet əməliyyatlarının idarə edilməsi və koordinasiyasına cavabdeh olmuşam. Bilet satışını idarə etmiş və kassaların fəaliyyətinə nəzarət etmişəm. Gündəlik bilet satışı və maliyyə hesabatları hazırlamışam. Girişlərdə biletlərin yoxlanılması əməliyyatlarını təşkil və koordinasiya etmişəm. Könüllülərə rəhbərlik etmiş, onların işini əlaqələndirmiş və motivasiyasını dəstəkləyərək tapşırıqların səmərəli bölüşdürülməsini təmin etmişəm. Dəqiqliyi, səmərəliliyi və fasiləsiz xidməti təmin etmək üçün gündəlik bilet əməliyyatlarına nəzarət etmişəm. Tamaşaçılara və qonaqlara peşəkar bilet xidmətinin göstərilməsini təmin etmişəm.",
+        "ru": "Отвечал за управление и координацию билетных операций на закреплённой площадке III Игр СНГ. Управлял продажей билетов и контролировал работу кассиров. Готовил ежедневные отчёты о продаже билетов и финансовые отчёты. Организовывал и координировал проверку билетов на входах. Руководил волонтёрами, координировал и мотивировал их, обеспечивая эффективное распределение задач и рабочий процесс. Контролировал ежедневные билетные операции для обеспечения точности, эффективности и бесперебойного обслуживания. Обеспечивал профессиональное обслуживание зрителей и гостей."
       }
     },
     {
@@ -627,9 +720,9 @@ const profile = {
         "ru": "Менеджер event-проектов"
       },
       "desc": {
-        "az": "Tədbirlərin konsepsiyadan icraya qədər idarə edilməsi, iş qrafikləri, büdcə, təchizatçı və podratçılar, qiymət təkliflərinin müqayisəsi, tender tələblərinin təhlili, kommersiya təklifləri və logistika.",
-        "en": "Managed events from concept to execution, schedules, budgets, vendors and contractors; compared quotations, analyzed tender requirements, prepared commercial proposals and coordinated logistics.",
-        "ru": "Управлял мероприятиями от концепции до реализации, графиками, бюджетами, поставщиками и подрядчиками; сравнивал ценовые предложения, анализировал тендерные требования, готовил коммерческие предложения и координировал логистику."
+        "en": "Managed event projects from the initial concept and planning stages through to final execution. Oversaw all event operations and developed detailed event schedules and timelines. Planned timelines for each project phase and monitored progress to ensure compliance with established schedules. Established and maintained relationships with contractors, subcontractors, and suppliers, coordinating their activities. Obtained, compared, and evaluated price quotations for products and services required for events. Analyzed tender requirements and developed project plans and detailed price lists in accordance with specifications. Prepared commercial proposals for tenders and submitted them to clients. Coordinated all operational and logistical processes required for event execution. Managed pre-event preparations and oversaw on-site operations during events.",
+        "az": "Tədbir layihələrini ilkin konsepsiya və planlaşdırma mərhələsindən yekun icrayadək idarə etmişəm. Bütün tədbir əməliyyatlarına nəzarət etmiş, ətraflı iş qrafikləri və icra müddətləri hazırlamışam. Layihənin hər mərhələsi üzrə müddətləri planlaşdırmış və qrafikə uyğunluğu izləmək üçün icra vəziyyətinə nəzarət etmişəm. Podratçılar, subpodratçılar və təchizatçılarla əməkdaşlıq qurmuş, əlaqələri davam etdirmiş və onların fəaliyyətini koordinasiya etmişəm. Tədbirlər üçün tələb olunan məhsul və xidmətlər üzrə qiymət təkliflərini toplamış, müqayisə və qiymətləndirmişəm. Tender tələblərini təhlil etmiş, texniki şərtlərə uyğun layihə planları və ətraflı qiymət siyahıları hazırlamışam. Tenderlər üçün kommersiya təklifləri hazırlayaraq müştərilərə təqdim etmişəm. Tədbirlərin icrası üçün bütün əməliyyat və logistika proseslərini əlaqələndirmişəm. Tədbiröncəsi hazırlıqları idarə etmiş və tədbir zamanı yerində əməliyyatlara nəzarət etmişəm.",
+        "ru": "Управлял проектами мероприятий от первоначальной концепции и планирования до окончательной реализации. Контролировал все операции и разрабатывал подробные графики и сроки мероприятий. Планировал сроки каждого этапа и отслеживал ход работ для соблюдения графиков. Устанавливал и поддерживал отношения с подрядчиками, субподрядчиками и поставщиками, координируя их деятельность. Получал, сравнивал и оценивал ценовые предложения на необходимые товары и услуги. Анализировал тендерные требования и разрабатывал планы проектов и подробные прайс-листы согласно спецификациям. Готовил коммерческие предложения для тендеров и направлял их клиентам. Координировал все операционные и логистические процессы. Управлял подготовкой к мероприятиям и контролировал работу на площадке во время их проведения."
       }
     },
     {
@@ -649,9 +742,9 @@ const profile = {
         "ru": "Специалист по складскому учёту и учёту запасов"
       },
       "desc": {
-        "az": "Maliyyə və kommersiya sənədləri, alış-satış əməliyyatları, anbar qalıqları, mal hərəkəti, inventarizasiya və üzləşdirmələr. Mikro, Logo və Tiger ERP sistemləri ilə iş.",
-        "en": "Managed financial and commercial documentation, purchase and sales transactions, stock movements, inventory counts and reconciliations using Mikro, Logo and Tiger ERP systems.",
-        "ru": "Вёл финансовую и коммерческую документацию, операции закупок и продаж, движение запасов, инвентаризацию и сверки в ERP-системах Mikro, Logo и Tiger."
+        "en": "Experienced in accounting, sales operations, and warehouse management, with a strong background in financial documentation, inventory control, and operational processes. Managed accounting operations and prepared financial and commercial documentation. Processed purchase and sales transactions, including incoming goods documentation and internal sales. Monitored inventory levels, warehouse stock movements, and product transfers. Conducted inventory counts, reconciliations, and stock adjustments. Coordinated warehouse operations and ensured efficient product distribution. Utilized Mikro, Logo, and Tiger ERP systems to manage accounting, sales, and warehouse operations. Maintained accurate records and ensured timely processing of financial and operational transactions. Demonstrated strong organizational skills, attention to detail, accuracy, and responsibility.",
+        "az": "Mühasibat uçotu, satış əməliyyatları və anbar idarəetməsi, xüsusilə maliyyə sənədləşməsi, inventara nəzarət və əməliyyat prosesləri üzrə təcrübə qazanmışam. Uçot əməliyyatlarını idarə etmiş, maliyyə və kommersiya sənədləri hazırlamışam. Malların mədaxil sənədləri və daxili satışlar daxil olmaqla alış və satış əməliyyatlarını həyata keçirmişəm. Anbar qalıqlarına, mal hərəkətinə və məhsul transferlərinə nəzarət etmişəm. İnventarizasiya, üzləşdirmə və qalıq düzəlişləri aparmışam. Anbar əməliyyatlarını koordinasiya etmiş və məhsulların səmərəli paylanmasını təmin etmişəm. Mühasibat, satış və anbar əməliyyatlarını idarə etmək üçün Mikro, Logo və Tiger ERP sistemlərindən istifadə etmişəm. Uçotun dəqiq aparılmasını, maliyyə və əməliyyat məlumatlarının vaxtında işlənməsini təmin etmişəm. Təşkilatçılıq, detallara diqqət, dəqiqlik və məsuliyyət nümayiş etdirmişəm.",
+        "ru": "Имею опыт бухгалтерского учёта, операций продаж и управления складом, включая финансовую документацию, контроль запасов и операционные процессы. Вёл учётные операции и готовил финансовую и коммерческую документацию. Обрабатывал операции закупок и продаж, включая документы поступления товаров и внутренние продажи. Контролировал остатки, движение запасов и перемещения продукции. Проводил инвентаризации, сверки и корректировки остатков. Координировал складские операции и обеспечивал эффективное распределение продукции. Использовал ERP-системы Mikro, Logo и Tiger для управления учётом, продажами и складскими операциями. Обеспечивал точность записей и своевременную обработку финансовых и операционных транзакций. Демонстрировал организованность, внимание к деталям, точность и ответственность."
       }
     },
     {
@@ -671,9 +764,9 @@ const profile = {
         "ru": "Сотрудник по учёту запасов и производства"
       },
       "desc": {
-        "az": "Xammal və ümumi təchizat anbarlarının uçotu, alış sənədləri, Araz filiallarına mal transferləri, aylıq inventarizasiya, düzəlişlər və daxili satışlar.",
-        "en": "Managed raw materials and general supplies inventory, purchase documents, transfers to Araz branches, month-end stock counts, adjustments and internal sales.",
-        "ru": "Вёл учёт сырья и хозяйственных запасов, документы закупок, перемещения в филиалы Araz, ежемесячную инвентаризацию, корректировки и внутренние продажи."
+        "en": "Managed inventory accounting operations for the general supplies and raw materials warehouses. Processed incoming goods and purchase documents in the accounting system. Managed transfers of goods from the general supplies warehouse to Araz Market branches. Monitored warehouse stock levels and inventory movements. Conducted month-end stock counts and processed inventory adjustments. Handled internal company sales transactions and related documentation. Ensured accurate recording of warehouse transactions and inventory balances.",
+        "az": "Ümumi təchizat və xammal anbarlarının inventar uçotu əməliyyatlarını idarə etmişəm. Malların mədaxil və alış sənədlərini uçot sistemində işləmişəm. Ümumi təchizat anbarından Araz Market filiallarına mal transferlərini idarə etmişəm. Anbar qalıqlarına və inventar hərəkətinə nəzarət etmişəm. Ay sonunda inventarizasiya aparmış və qalıq düzəlişlərini işləmişəm. Şirkətdaxili satış əməliyyatlarını və müvafiq sənədləşməni həyata keçirmişəm. Anbar əməliyyatlarının və qalıqların dəqiq uçotunu təmin etmişəm.",
+        "ru": "Вёл учёт запасов на складах хозяйственных материалов и сырья. Обрабатывал документы поступления товаров и закупок в учётной системе. Управлял перемещением товаров со склада хозяйственных материалов в филиалы Araz Market. Контролировал складские остатки и движение запасов. Проводил инвентаризации в конце месяца и оформлял корректировки остатков. Обрабатывал внутренние продажи компании и соответствующую документацию. Обеспечивал точность учёта складских операций и остатков."
       }
     },
     {
@@ -693,9 +786,9 @@ const profile = {
         "ru": "Сотрудник по учёту запасов и производства"
       },
       "desc": {
-        "az": "Mikro proqramında ət anbarının uçotu, alışlar, xammalın hazır məhsula çevrilməsi, Araz filiallarına transferlər, aylıq silinmələr və anbar qalıqları.",
-        "en": "Maintained meat warehouse records in Mikro, recorded purchases, raw material conversion into finished products, transfers to Araz branches, month-end write-offs and stock balances.",
-        "ru": "Вёл учёт мясного склада в Mikro, закупок, переработки сырья в готовую продукцию, перемещений в филиалы Araz, ежемесячных списаний и остатков."
+        "en": "Maintained meat warehouse inventory records using Mikro accounting software. Recorded purchases and incoming goods transactions for meat and raw materials. Processed raw material conversion into finished products within the accounting system. Managed finished goods transfers to Araz Market branches and prepared relevant transfer documents. Handled month-end inventory write-offs. Monitored stock movements and warehouse balances. Ensured accuracy and consistency of inventory records.",
+        "az": "Mikro uçot proqramında ət anbarının inventar uçotunu aparmışam. Ət və xammal üzrə alış və mədaxil əməliyyatlarını qeydə almışam. Xammalın hazır məhsula çevrilməsi əməliyyatlarını uçot sistemində işləmişəm. Hazır məhsulların Araz Market filiallarına transferlərini idarə etmiş və müvafiq sənədləri hazırlamışam. Ay sonunda inventar üzrə silinmə əməliyyatlarını aparmışam. Mal hərəkətinə və anbar qalıqlarına nəzarət etmişəm. İnventar uçotunun dəqiqliyini və ardıcıllığını təmin etmişəm.",
+        "ru": "Вёл учёт запасов мясного склада в программе Mikro. Регистрировал закупки и поступления мяса и сырья. Отражал в учётной системе переработку сырья в готовую продукцию. Управлял перемещением готовой продукции в филиалы Araz Market и оформлял соответствующие документы. Проводил списания запасов в конце месяца. Контролировал движение товаров и складские остатки. Обеспечивал точность и согласованность учётных записей."
       }
     },
     {
@@ -781,9 +874,9 @@ const profile = {
         "ru": "Супервайзер зрительских служб"
       },
       "desc": {
-        "az": "Tamaşaçı xidmətləri komandasına rəhbərlik, prosedurların koordinasiyası və qonaq axınının idarə olunması.",
-        "en": "Led spectator services team, coordinated procedures and managed guest flow.",
-        "ru": "Руководство командой зрительского сервиса, координация процедур и управление потоком гостей."
+        "en": "Led spectator services operations for the 4th Islamic Solidarity Games, Baku 2017, overseeing volunteer teams and coordinating guest services across event venues. Managed crowd flow, access procedures, and spectator guidance, while resolving on-site operational issues to support efficient event delivery and a positive spectator experience.",
+        "az": "Bakı 2017 IV İslam Həmrəyliyi Oyunlarında tamaşaçı xidmətləri əməliyyatlarına rəhbərlik etmiş, könüllü komandalarına nəzarət etmiş və tədbir məkanlarında qonaq xidmətlərini əlaqələndirmişəm. Tamaşaçı axınını, giriş prosedurlarını və tamaşaçıların istiqamətləndirilməsini idarə etmiş, tədbirin səmərəli keçirilməsi və müsbət tamaşaçı təcrübəsi üçün yerində yaranan əməliyyat problemlərini həll etmişəm.",
+        "ru": "Руководил операциями зрительских служб на IV Играх исламской солидарности в Баку в 2017 году, контролировал команды волонтёров и координировал обслуживание гостей на площадках. Управлял потоками зрителей, процедурами доступа и навигацией, решал операционные вопросы на местах для эффективного проведения мероприятия и положительного опыта зрителей."
       }
     }
   ],
@@ -871,6 +964,42 @@ const profile = {
       "Machine Learning",
       "Машинное обучение",
       "Portfolio"
+    ],
+    [
+      "Excel üzrə qabaqcıl formullar və funksiyalar",
+      "Advanced Excel Formulas & Functions",
+      "Продвинутые формулы и функции Excel",
+      ""
+    ],
+    [
+      "Məlumatların təhlili və hesabatların hazırlanması",
+      "Data Analysis & Reporting",
+      "Анализ данных и отчётность",
+      ""
+    ],
+    [
+      "Analitik panellərin hazırlanması",
+      "Dashboard Development",
+      "Разработка дашбордов",
+      ""
+    ],
+    [
+      "Tədbirlərin idarə edilməsi",
+      "Event Management",
+      "Управление мероприятиями",
+      ""
+    ],
+    [
+      "Təchizatçılar və maraqlı tərəflərlə iş",
+      "Vendor & Stakeholder Management",
+      "Управление поставщиками и взаимодействие с заинтересованными сторонами",
+      ""
+    ],
+    [
+      "Logistika və koordinasiya",
+      "Logistics & Coordination",
+      "Логистика и координация",
+      ""
     ]
   ],
   "soft": {
@@ -1463,15 +1592,16 @@ const projects = [
       "ru": "IT / веб-платформа"
     },
     "desc": {
-      "az": "93 CV şablonu, canlı redaktor və önizləmə, ATS uyğun formatlar, A4 PDF ixracı, avtomatik yadda saxlama və AZ/EN/RU dil dəstəyi olan CV yaratma platforması.",
-      "en": "Online CV builder with 93 templates, live editing and preview, ATS-friendly formats, A4 PDF export, autosave and AZ/EN/RU support.",
-      "ru": "Конструктор резюме с 93 шаблонами, редактором и предпросмотром, ATS-совместимыми форматами, экспортом PDF A4, автосохранением и поддержкой AZ/EN/RU."
+      "en": "CVYARATONLINE — Build your professional future, one CV at a time. In today’s competitive job market, your CV is more than just a document; it is your first impression. CVYARATONLINE is a modern online CV creation platform designed to make professional résumé building simple, accessible, and efficient. Its goal is to help job seekers, students, graduates, and professionals present their skills, experience, and achievements in the best possible way. Features: 93 professionally designed CV templates; real-time CV editor and live preview; modern, clean, and professional designs; ATS-friendly CV formats; A4-ready PDF downloads; automatic saving; Azerbaijani, English, and Russian language support; and a simple, user-friendly interface. Create your CV in three steps: enter your professional information, choose a design that represents you, and download your CV.",
+      "az": "CVYARATONLINE — Peşəkar gələcəyinizi CV ilə qurun. Müasir rəqabətli əmək bazarında CV sadəcə sənəd deyil, ilk təəssüratınızdır. CVYARATONLINE peşəkar CV hazırlamağı sadə, əlçatan və səmərəli edən müasir onlayn platformadır. Məqsəd iş axtaranlara, tələbələrə, məzunlara və mütəxəssislərə bacarıqlarını, təcrübələrini və nailiyyətlərini ən yaxşı şəkildə təqdim etməyə kömək etməkdir. İmkanlar: peşəkar dizayn edilmiş 93 CV şablonu; real vaxt rejimində redaktə və önizləmə; müasir, səliqəli və peşəkar dizaynlar; ATS-ə uyğun formatlar; A4 ölçülü PDF yükləmə; avtomatik yadda saxlama; Azərbaycan, ingilis və rus dilləri; sadə və rahat interfeys. Üç addımda CV hazırlayın: peşəkar məlumatlarınızı daxil edin, sizi əks etdirən dizaynı seçin və CV-nizi yükləyin.",
+      "ru": "CVYARATONLINE — Создавайте своё профессиональное будущее с помощью резюме. На современном конкурентном рынке труда резюме — не просто документ, а первое впечатление о вас. CVYARATONLINE — современная онлайн-платформа, которая делает создание профессионального резюме простым, доступным и эффективным. Цель — помочь соискателям, студентам, выпускникам и специалистам наилучшим образом представить навыки, опыт и достижения. Возможности: 93 профессионально оформленных шаблона; редактор и предварительный просмотр в реальном времени; современные, лаконичные и профессиональные дизайны; форматы, совместимые с ATS; скачивание PDF формата A4; автосохранение; азербайджанский, английский и русский языки; простой и удобный интерфейс. Три шага: введите профессиональные данные, выберите подходящий дизайн и скачайте резюме."
     },
     "tags": [
       "Web",
       "CV Builder",
       "Product UI"
-    ]
+    ],
+    "period": "06.2026"
   },
   {
     "title": "Lingo",
@@ -1482,19 +1612,20 @@ const projects = [
       "ru": "ИИ / Платформа изучения языков"
     },
     "desc": {
-      "az": "İngilis və rus dilləri üçün fərdiləşdirilmiş planlar, AI mentor, interaktiv tapşırıqlar, irəliləyiş izləmə və A1–C2 CEFR səviyyələri.",
-      "en": "English and Russian learning platform with personalized plans, AI mentor, interactive exercises, progress tracking and CEFR A1–C2 levels.",
-      "ru": "Платформа изучения английского и русского языков с персональными планами, ИИ-наставником, интерактивными заданиями, отслеживанием прогресса и уровнями CEFR A1–C2."
+      "en": "LINGO — Your personal language learning space. Learning a new language should be structured, interactive, and accessible. LINGO is a digital language-learning platform designed to help users improve their English and Russian language skills through a personalized and structured learning experience. It brings different aspects of language learning together in one place, allowing users to learn at their own pace and track their progress. Key features: personalized learning plans; AI-powered language mentor; grammar learning and practice; vocabulary building; alphabet and pronunciation training; reading and listening exercises; writing and speaking practice; interactive lessons and self-assessment; learning progress tracking; learning resources; and CEFR-based levels (A1–C2). The vision is to make language learning more accessible, engaging, and personalized through technology.",
+      "az": "LINGO — Fərdi dil öyrənmə məkanınız. Yeni dil öyrənmək sistemli, interaktiv və əlçatan olmalıdır. LINGO istifadəçilərin fərdiləşdirilmiş və sistemli tədris vasitəsilə ingilis və rus dili bacarıqlarını inkişaf etdirməsinə kömək edən rəqəmsal platformadır. Dil öyrənmənin müxtəlif istiqamətlərini bir məkanda birləşdirərək istifadəçilərə öz sürətləri ilə öyrənmək və irəliləyişlərini izləmək imkanı verir. Əsas imkanlar: fərdi tədris planları; süni intellekt əsaslı dil mentoru; qrammatikanın öyrənilməsi və məşqlər; söz ehtiyatının artırılması; əlifba və tələffüz məşqləri; oxu və dinləmə tapşırıqları; yazı və danışıq praktikası; interaktiv dərslər və özünüqiymətləndirmə; irəliləyişin izlənməsi; tədris resursları; CEFR üzrə A1–C2 səviyyələri. Məqsəd texnologiya vasitəsilə dil öyrənməni daha əlçatan, maraqlı və fərdiləşdirilmiş etməkdir.",
+      "ru": "LINGO — Ваше личное пространство для изучения языков. Изучение нового языка должно быть структурированным, интерактивным и доступным. LINGO — цифровая платформа для развития навыков английского и русского языков с помощью персонализированного и структурированного обучения. Она объединяет различные аспекты изучения языка, позволяя учиться в собственном темпе и отслеживать прогресс. Основные возможности: индивидуальные планы обучения; языковой наставник на основе ИИ; изучение и практика грамматики; расширение словарного запаса; изучение алфавита и тренировка произношения; упражнения по чтению и аудированию; практика письма и устной речи; интерактивные уроки и самооценка; отслеживание прогресса; учебные ресурсы; уровни CEFR A1–C2. Цель — сделать изучение языков более доступным, увлекательным и персонализированным с помощью технологий."
     },
     "tags": [
       "AI",
       "Education",
       "Web",
       "CEFR"
-    ]
+    ],
+    "period": "10.2026"
   },
   {
-    "title": "MagistrAI",
+    "title": "MagistrAI — AI-Powered Master’s Program Selection Platform",
     "url": "https://magistrai.pages.dev/",
     "kind": {
       "az": "IT / AI yönümlü platforma",
@@ -1502,9 +1633,9 @@ const projects = [
       "ru": "IT / AI-ориентированная платформа"
     },
     "desc": {
-      "az": "Magistratura ixtisaslarının qəbul balı və seçimlərə əsasən sıralanması, risk səviyyələrinin müqayisəsi və PDF seçim siyahısı. Verilənlər bazası Excel-də sıfırdan qurulub SQL-ə köçürülüb; Gemini API inteqrasiya edilib.",
-      "en": "Prototype ranking master’s programs by admission scores and preferences, comparing risk levels and generating a PDF selection list. Built the database from scratch in Excel, migrated it to SQL and integrated the Gemini API.",
-      "ru": "Прототип подбора магистерских программ по баллам и предпочтениям, сравнения рисков и формирования PDF-списка. База создана с нуля в Excel, перенесена в SQL; интегрирован Gemini API."
+      "en": "MagistrAI is a prototype web-based platform designed to help prospective master’s students make informed decisions when selecting university specializations in Azerbaijan. The platform analyzes admission scores, academic specializations, and study preferences to identify and rank suitable master’s programs. It also categorizes options based on admission risk levels, allowing users to compare alternatives and generate a personalized PDF selection list. My contributions and technical implementation: I designed and built the project’s database structure from scratch using Microsoft Excel, organized the underlying data, and subsequently migrated it into an SQL database. I worked on SQL database implementation and data organization to support the platform’s information retrieval and analysis processes. I integrated Google’s Gemini API to introduce AI-powered functionality into selected parts of the platform.",
+      "az": "MagistrAI Azərbaycanda magistratura ixtisası seçən namizədlərə əsaslandırılmış qərarlar verməkdə kömək etmək üçün hazırlanmış veb-platforma prototipidir. Platforma uyğun magistratura proqramlarını müəyyən etmək və sıralamaq üçün qəbul ballarını, akademik ixtisasları və təhsil seçimlərini təhlil edir. Həmçinin seçimləri qəbul riskinin səviyyəsinə görə qruplaşdıraraq alternativləri müqayisə etməyə və fərdi PDF seçim siyahısı yaratmağa imkan verir. Mənim töhfələrim və texniki icra: Microsoft Excel vasitəsilə layihənin verilənlər bazasının strukturunu sıfırdan qurmuş, məlumatları sistemləşdirmiş və sonradan SQL verilənlər bazasına köçürmüşəm. Platformanın məlumat axtarışı və təhlili proseslərini dəstəkləmək üçün SQL verilənlər bazasının tətbiqi və məlumatların təşkili üzərində çalışmışam. Platformanın müəyyən hissələrinə süni intellekt funksionallığı əlavə etmək üçün Google Gemini API-ni inteqrasiya etmişəm.",
+      "ru": "MagistrAI — прототип веб-платформы, предназначенной для помощи будущим магистрантам в принятии обоснованных решений при выборе университетских специальностей в Азербайджане. Платформа анализирует вступительные баллы, академические специальности и учебные предпочтения, чтобы определить и ранжировать подходящие магистерские программы. Она также группирует варианты по уровню риска поступления, позволяя сравнивать альтернативы и формировать персональный список выбора в PDF. Мой вклад и техническая реализация: спроектировал и создал структуру базы данных с нуля в Microsoft Excel, систематизировал исходные данные и затем перенёс их в базу данных SQL. Работал над внедрением базы данных SQL и организацией данных для поддержки поиска и анализа информации на платформе. Интегрировал Google Gemini API для добавления функций ИИ в отдельные части платформы."
     },
     "tags": [
       "AI",
@@ -1513,7 +1644,8 @@ const projects = [
       "Excel",
       "SQL",
       "Gemini API"
-    ]
+    ],
+    "period": "05.2026 – 06.2026"
   },
   {
     "title": "MagistrPlus",
@@ -1549,7 +1681,7 @@ const ui = {
     "hero_eyebrow": "IT Portfolio · Analytics · Web Systems",
     "hero_title": "Rasim Abdullayev",
     "hero_subtitle": "Junior Data Analyst | AI Prompt Engineering | AI əsaslı layihələrin hazırlanması | Süni intellekt",
-    "hero_desc": "Layihə və əməliyyat idarəetməsi, inventar uçotu və məlumatların emalı təcrübəsini qabaqcıl Excel, baza SQL və AI bacarıqları ilə birləşdirərək data analitikası istiqamətində inkişaf edirəm.",
+    "hero_desc": "Layihələrin və əməliyyatların idarə edilməsi, eləcə də strateji koordinasiya üzrə geniş təcrübəyə malik, nəticəyönümlü mütəxəssis kimi məlumat analitikası sahəsinə keçid edirəm. Microsoft Excel üzrə qabaqcıl biliklərə (Power Query, Pivot cədvəllər, məlumatların təmizlənməsi və analitik panellərin hazırlanması), SQL üzrə baza biliklərinə və süni intellekt modelləri üçün sorğuların hazırlanması üzrə praktiki bacarıqlara malikəm. Müxtəlif layihələrdə büdcə, tender, logistika və əməliyyat proseslərinin idarə edilməsində, həmçinin Formula 1 Qatar Airways Azərbaycan Qran Prisi, CEV Trendyol EuroVolley və 3-cü MDB Oyunları kimi beynəlxalq idman tədbirlərində əməliyyat və koordinasiya üzrə praktiki təcrübəm var. Analitik düşüncə və problem həlli bacarıqlarımı birləşdirərək əməliyyat məlumatlarını əsaslandırılmış biznes qərarlarını dəstəkləyən praktik nəticələrə çevirməyi hədəfləyirəm.",
     "hero_cta1": "Layihələrə bax",
     "hero_cta2": "CV kimi çap et",
     "hero_cta3": "Əlaqə yarat",
@@ -1563,12 +1695,12 @@ const ui = {
     "terminal_2": "focus: analytics + data processing",
     "terminal_3": "projects: CVYarat, Lingo, MagistrAI, MagistrPlus",
     "terminal_4": "mode: GitHub Pages ready",
-    "sec_exp_label": "Karyera yolu",
-    "sec_exp_title": "Təcrübə",
-    "sec_exp_copy": "CV-dəki iş təcrübələri və əvvəlki portfoliodan saxlanılan əlavə təcrübələr.",
+    "sec_exp_label": "Peşəkar təcrübə",
+    "sec_exp_title": "İş təcrübəsi",
+    "sec_exp_copy": "Beynəlxalq idman tədbirlərinin təşkili və əməliyyat koordinasiyasından layihə idarəetməsi, logistika və inventar uçotunadək müxtəlif sahələrdə qazandığım peşəkar təcrübə.",
     "sec_projects_label": "Son işlər",
     "sec_projects_title": "IT layihələr",
-    "sec_projects_copy": "CV-dəki layihələr və əvvəlki portfoliodan saxlanılan MagistrPlus.",
+    "sec_projects_copy": "Data analitikası, süni intellekt və veb texnologiyaları əsasında hazırladığım rəqəmsal layihələr və praktik həllər.",
     "open_project": "Canlı layihəyə keç",
     "project_note": "Created project",
     "sec_skills_label": "Bacarıqlar",
@@ -1590,16 +1722,17 @@ const ui = {
     "filter_award": "Mükafat",
     "sec_motivation_label": "Motivasiya məktubu",
     "sec_motivation_title": "Data analitikası sahəsində karyera məqsədim",
-    "sec_motivation_copy": "Portfolio daxilində təqdim oluna bilən qısa professional motivasiya məktubu.",
+    "sec_motivation_copy": "CV-yə əsaslanan peşəkar motivasiya məktubu.",
     "copy_letter": "Məktubu kopyala",
     "copied": "Kopyalandı",
     "letter": [
-      "Hörmətli işəgötürən,",
-      "Junior Data Analyst vəzifəsində karyeramı inkişaf etdirmək üçün müraciət edirəm. İnformasiya texnologiyaları üzrə təhsilim, layihə və əməliyyat idarəetməsi, anbar və inventar uçotu sahələrində təcrübəm məlumatlarla işləmək və biznes proseslərini anlamaq üçün möhkəm baza yaradıb.",
-      "ICTA-da analitika və məlumatların emalı üzrə təcrübə proqramında Excel, SQL, Power BI və Python ilə praktiki tapşırıqlar yerinə yetirmişəm. Microsoft Excel üzrə qabaqcıl biliklərimə Power Query, Pivot cədvəllər, məlumatların təmizlənməsi və dashboard hazırlanması daxildir. SQL üzrə baza biliklərimi inkişaf etdirirəm. MagistrAI layihəsində verilənlər bazasını Excel-də sıfırdan quraraq SQL-ə köçürmüş və Gemini API inteqrasiyası üzərində çalışmışam.",
-      "LEDAZ-da layihə meneceri kimi büdcə, tender, qiymət təklifləri və logistika ilə işləmişəm. Veysəloğlu şirkətlər qrupunda inventar uçotu, ERP sistemləri və məlumatların dəqiqliyi üzrə təcrübə qazanmışam. Beynəlxalq idman tədbirlərində isə əməliyyat koordinasiyası və MDB Oyunlarında gündəlik satış və maliyyə hesabatlarının hazırlanması ilə məşğul olmuşam.",
-      "Məqsədim bu təcrübəni analitik bacarıqlarımla birləşdirərək məlumatları biznes qərarlarını dəstəkləyən nəticələrə çevirməkdir. Komandanıza məsuliyyətli yanaşma, analitik düşüncə və davamlı öyrənmə istəyi ilə töhfə verməyə hazıram.",
-      "Hörmətlə, Rasim Abdullayev"
+      "Hörmətli işə qəbul üzrə mütəxəssis,",
+      "Junior Data Analyst (kiçik məlumat analitiki) vəzifəsi üzrə karyera imkanlarına marağımı bildirmək istəyirəm. İnformasiya texnologiyaları üzrə təhsilim, layihə və əməliyyat idarəetməsi, eləcə də inventar uçotu sahələrində peşəkar təcrübəm dəqiq məlumatların, sistemli hesabatların və analitik düşüncənin biznes qərarlarında rolunu praktiki şəkildə anlamağıma imkan verib. Məlumat analitikası sahəsinə keçidim bu təcrübəni texniki bacarıqlarımla birləşdirmək istiqamətində düşünülmüş addımdır.",
+      "İnformasiya Kommunikasiya Texnologiyaları Agentliyində (İKTA) analitika və məlumatların emalı üzrə təcrübə proqramı zamanı Microsoft Excel, SQL, Power BI və Python vasitəsilə praktiki analitik tapşırıqlar yerinə yetirmişəm. Microsoft Excel üzrə qabaqcıl bacarıqlarıma formullar və funksiyalar, Power Query, Pivot cədvəllər, məlumatların təmizlənməsi, yoxlanılması və analitik panellərin hazırlanması daxildir. SQL üzrə baza biliklərim, süni intellekt modelləri üçün sorğuların hazırlanması, veb-saytlardan məlumatların avtomatlaşdırılmış şəkildə çıxarılması və AI əsaslı tətbiqlərin hazırlanması üzrə praktiki təcrübəm var.",
+      "Əvvəlki vəzifələrim biznes proseslərini müxtəlif istiqamətlərdən anlamağıma şərait yaradıb. LEDAZ şirkətində tədbir layihə meneceri kimi tender tələblərini təhlil etmiş, təchizatçıların qiymət təkliflərini müqayisə etmiş, büdcələrlə işləmiş, layihə qrafiklərini və logistikanı koordinasiya etmişəm. Veysəloğlu Şirkətlər Qrupunda inventar uçotu aparmış, anbar qalıqlarını üzləşdirmiş, maliyyə və əməliyyat məlumatlarını işləmiş, Mikro, Logo və Tiger ERP sistemlərindən istifadə etmişəm. 3-cü MDB Oyunlarında bilet əməliyyatları üzrə koordinator kimi gündəlik bilet satışı və maliyyə hesabatları hazırlamışam. Formula 1 və CEV Trendyol EuroVolley tədbirlərindəki fəaliyyətim komanda koordinasiyası, əməliyyat problemlərinin həlli və gərgin şəraitdə işləmək bacarıqlarımı daha da inkişaf etdirib.",
+      "Texniki biliklərimi praktiki layihələrdə də tətbiq edirəm. MagistrAI layihəsi üçün verilənlər bazasının strukturunu Excel-də sıfırdan qurmuş, məlumatları sistemləşdirmiş, SQL verilənlər bazasına köçürmüş və platformanın müəyyən funksiyalarına Google Gemini API-ni inteqrasiya etmişəm. CVYarat və Lingo layihələri isə əlçatan, istifadəçiyönümlü rəqəmsal həllərin hazırlanmasına marağımı əks etdirir.",
+      "Məlumatların keyfiyyətinin təmin edilməsi, hesabatların hazırlanması və biznes məlumatlarının şərhi istiqamətində komandaya töhfə vermək istəyirəm. Detallara diqqət, işə məsuliyyətli yanaşma və davamlı peşəkar inkişaf mənim üçün əsas prinsiplərdir. Təcrübə və analitik bacarıqlarımla təşkilatınıza necə töhfə verə biləcəyimi müsahibə zamanı müzakirə etməkdən məmnun olaram. Vaxt ayırdığınız və müraciətimi nəzərdən keçirdiyiniz üçün təşəkkür edirəm.",
+      "Hörmətlə,\nRasim Abdullayev"
     ],
     "sec_contact_label": "Əlaqə",
     "sec_contact_title": "Əlaqə məlumatları",
@@ -1610,7 +1743,12 @@ const ui = {
     "send_mail": "Məktub göndər",
     "whatsapp": "WhatsApp",
     "top": "Yuxarı",
-    "rights": "Bütün hüquqlar qorunur."
+    "rights": "Bütün hüquqlar qorunur.",
+    "cv_sports": "Beynəlxalq idman tədbiri",
+    "cv_excel": "Excel bilikləri",
+    "cv_fields": "Əsas peşəkar istiqamət",
+    "cv_pm": "Layihə idarəetməsi təcrübəsi",
+    "cv_advanced": "Qabaqcıl"
   },
   "en": {
     "meta_description": "Rasim Abdullayev — IT-oriented portfolio and CV. Experience, IT projects, skills, certificates, education and motivation letter.",
@@ -1625,7 +1763,7 @@ const ui = {
     "hero_eyebrow": "IT Portfolio · Analytics · Web Systems",
     "hero_title": "Rasim Abdullayev",
     "hero_subtitle": "Junior Data Analyst | AI Prompt Engineering | AI-Powered Project Development | Artificial Intelligence",
-    "hero_desc": "Transitioning into data analytics with a background in project and operations management, inventory accounting and data processing, advanced Excel skills, foundational SQL and practical AI experience.",
+    "hero_desc": "Results-driven professional with extensive experience in project management, operations management, and strategic coordination, transitioning into data analytics. Proficient in advanced Microsoft Excel (Power Query, Pivot Tables, data cleaning, and dashboard development), with foundational SQL knowledge and practical AI prompt engineering skills. Proven background in managing budgets, tenders, logistics, and operational workflows across diverse projects, alongside hands-on operational and coordination roles in major international sporting events, including the Formula 1 Qatar Airways Azerbaijan Grand Prix, CEV Trendyol EuroVolley, and the 3rd CIS Games. Combines strong analytical thinking and problem-solving skills to transform operational data into actionable insights that support data-driven business decisions.",
     "hero_cta1": "View projects",
     "hero_cta2": "Print CV",
     "hero_cta3": "Contact",
@@ -1639,12 +1777,12 @@ const ui = {
     "terminal_2": "focus: analytics + data processing",
     "terminal_3": "projects: CVYarat, Lingo, MagistrAI, MagistrPlus",
     "terminal_4": "mode: GitHub Pages ready",
-    "sec_exp_label": "Career path",
-    "sec_exp_title": "Experience",
-    "sec_exp_copy": "CV-aligned work history and additional experience retained from the previous portfolio.",
+    "sec_exp_label": "Professional background",
+    "sec_exp_title": "Work Experience",
+    "sec_exp_copy": "Professional experience spanning international sports event operations, project management, logistics, and inventory accounting.",
     "sec_projects_label": "Latest work",
     "sec_projects_title": "IT projects",
-    "sec_projects_copy": "CV projects and MagistrPlus retained from the previous portfolio.",
+    "sec_projects_copy": "Digital projects and practical solutions developed across data analytics, artificial intelligence, and web technologies.",
     "open_project": "Open live project",
     "project_note": "Created project",
     "sec_skills_label": "Skills",
@@ -1666,16 +1804,17 @@ const ui = {
     "filter_award": "Awards",
     "sec_motivation_label": "Motivation letter",
     "sec_motivation_title": "My career goal in data analytics",
-    "sec_motivation_copy": "A short professional motivation letter included inside the portfolio.",
+    "sec_motivation_copy": "Professional cover letter based on my career experience.",
     "copy_letter": "Copy letter",
     "copied": "Copied",
     "letter": [
       "Dear Hiring Manager,",
-      "I am seeking a Junior Data Analyst position where I can build on my Information Technology education and professional background in project management, operations and inventory accounting. These roles have given me a practical understanding of business processes and the importance of accurate data.",
-      "During my analytics and data processing internship at ICTA, I completed practical tasks using Excel, SQL, Power BI and Python. My advanced Excel skills include Power Query, Pivot Tables, data cleaning and dashboard development, and I continue to develop my foundational SQL knowledge. For MagistrAI, I built a database from scratch in Excel, migrated it to SQL and worked on integrating the Gemini API.",
-      "As an Event Project Manager at LEDAZ, I worked with budgets, tenders, quotations and logistics. At Veyseloglu Group, I gained experience in inventory accounting, ERP systems and data accuracy. My international sporting event roles strengthened my operational coordination skills, including preparing daily ticket sales and financial reports at the CIS Games.",
-      "My goal is to combine this business experience with analytical skills to turn data into actionable insights that support informed decisions. I am ready to contribute through analytical thinking, attention to detail, responsibility and a commitment to continuous learning.",
-      "Sincerely, Rasim Abdullayev"
+      "I am writing to express my interest in Junior Data Analyst opportunities. With a background in information technology and professional experience in project management, operations, and inventory accounting, I bring a practical understanding of how accurate data, structured reporting, and analytical thinking contribute to effective business decisions. My transition into data analytics is a deliberate step toward combining this experience with my technical skills.",
+      "During my analytics and data processing internship at the Information and Communication Technologies Agency (ICTA), I worked with Microsoft Excel, SQL, Power BI, and Python on practical data analysis and processing tasks. My advanced Excel skills include formulas and functions, Power Query, Pivot Tables, data cleaning, validation, and dashboard development. I have foundational SQL knowledge and practical experience in AI prompt engineering, automated web data extraction, and AI-powered application development.",
+      "My previous roles have given me a strong business perspective. As an Event Project Manager at LEDAZ, I analyzed tender requirements, compared supplier quotations, worked with budgets, and coordinated project schedules and logistics. At Veyseloglu Group, I maintained inventory records, reconciled stock balances, processed financial and operational transactions, and worked with Mikro, Logo, and Tiger ERP systems. As a Venue Ticketing Coordinator at the 3rd CIS Games, I prepared daily ticket sales and financial reports. My roles at Formula 1 and CEV Trendyol EuroVolley further strengthened my ability to coordinate teams, solve operational problems, and work under pressure.",
+      "I also apply my technical knowledge through practical projects. For MagistrAI, I designed a database structure from scratch in Excel, organized the data, migrated it to SQL, and integrated Google’s Gemini API into selected platform features. My other projects, CVYarat and Lingo, reflect my interest in building accessible, user-focused digital solutions.",
+      "I am eager to contribute to a team by supporting data quality, reporting, and the interpretation of business information. I offer attention to detail, a responsible approach to work, and a commitment to continuous professional development. I would welcome the opportunity to discuss how my experience and analytical skills could contribute to your organization. Thank you for your time and consideration.",
+      "Sincerely,\nRasim Abdullayev"
     ],
     "sec_contact_label": "Contact",
     "sec_contact_title": "Contact information",
@@ -1686,7 +1825,12 @@ const ui = {
     "send_mail": "Send email",
     "whatsapp": "WhatsApp",
     "top": "Top",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "cv_sports": "International sports events",
+    "cv_excel": "Excel proficiency",
+    "cv_fields": "Core professional fields",
+    "cv_pm": "Project management experience",
+    "cv_advanced": "Advanced"
   },
   "ru": {
     "meta_description": "Rasim Abdullayev — IT-портфолио и CV. Опыт, IT-проекты, навыки, сертификаты, образование и мотивационное письмо.",
@@ -1701,7 +1845,7 @@ const ui = {
     "hero_eyebrow": "IT Portfolio · Analytics · Web Systems",
     "hero_title": "Rasim Abdullayev",
     "hero_subtitle": "Junior Data Analyst | Prompt Engineering | Разработка ИИ-проектов | Искусственный интеллект",
-    "hero_desc": "Развиваюсь в аналитике данных, сочетая опыт управления проектами и операциями, учёта запасов и обработки данных с продвинутым Excel, базовым SQL и практикой ИИ.",
+    "hero_desc": "Ориентированный на результат специалист с обширным опытом управления проектами, операциями и стратегической координации, развивающий карьеру в аналитике данных. Владею Microsoft Excel на продвинутом уровне (Power Query, сводные таблицы, очистка данных и разработка дашбордов), имею базовые знания SQL и практические навыки составления запросов для ИИ. Обладаю опытом управления бюджетами, тендерами, логистикой и операционными процессами в различных проектах, а также практическим опытом операционной работы и координации на крупных международных спортивных мероприятиях, включая Formula 1 Qatar Airways Azerbaijan Grand Prix, CEV Trendyol EuroVolley и III Игры СНГ. Сочетаю аналитическое мышление и навыки решения задач, чтобы превращать операционные данные в практические выводы для обоснованных бизнес-решений.",
     "hero_cta1": "Смотреть проекты",
     "hero_cta2": "Печать CV",
     "hero_cta3": "Связаться",
@@ -1715,12 +1859,12 @@ const ui = {
     "terminal_2": "focus: analytics + data processing",
     "terminal_3": "projects: CVYarat, Lingo, MagistrAI, MagistrPlus",
     "terminal_4": "mode: GitHub Pages ready",
-    "sec_exp_label": "Карьерный путь",
-    "sec_exp_title": "Опыт",
-    "sec_exp_copy": "Опыт работы по CV и дополнительные позиции из прежнего портфолио.",
+    "sec_exp_label": "Профессиональный опыт",
+    "sec_exp_title": "Опыт работы",
+    "sec_exp_copy": "Профессиональный опыт в организации международных спортивных мероприятий, управлении проектами, логистике и учёте товарных запасов.",
     "sec_projects_label": "Последние работы",
     "sec_projects_title": "IT-проекты",
-    "sec_projects_copy": "Проекты из CV и MagistrPlus из прежнего портфолио.",
+    "sec_projects_copy": "Цифровые проекты и практические решения в области аналитики данных, искусственного интеллекта и веб-технологий.",
     "open_project": "Открыть проект",
     "project_note": "Созданный проект",
     "sec_skills_label": "Навыки",
@@ -1742,16 +1886,17 @@ const ui = {
     "filter_award": "Награды",
     "sec_motivation_label": "Мотивационное письмо",
     "sec_motivation_title": "Моя карьерная цель в аналитике данных",
-    "sec_motivation_copy": "Короткое профессиональное мотивационное письмо внутри портфолио.",
+    "sec_motivation_copy": "Профессиональное мотивационное письмо на основе моего опыта.",
     "copy_letter": "Скопировать письмо",
     "copied": "Скопировано",
     "letter": [
-      "Уважаемый работодатель,",
-      "Я заинтересован в позиции Junior Data Analyst, на которой смогу применить образование в области информационных технологий и опыт управления проектами, операциями и учёта запасов. Этот опыт сформировал понимание бизнес-процессов и важности точности данных.",
-      "Во время стажировки по аналитике и обработке данных в ICTA я выполнял практические задачи с Excel, SQL, Power BI и Python. Мои продвинутые навыки Excel включают Power Query, сводные таблицы, очистку данных и создание дашбордов. Продолжаю развивать базовые знания SQL. В проекте MagistrAI я создал базу данных с нуля в Excel, перенёс её в SQL и работал над интеграцией Gemini API.",
-      "В LEDAZ я работал с бюджетами, тендерами, ценовыми предложениями и логистикой. В группе компаний Veyseloglu получил опыт учёта запасов, работы с ERP-системами и обеспечения точности данных. На международных спортивных мероприятиях занимался операционной координацией, а на Играх СНГ также готовил ежедневные отчёты о продажах билетов и финансовые отчёты.",
-      "Моя цель — объединить бизнес-опыт с аналитическими навыками, превращая данные в полезные выводы для принятия решений. Готов внести вклад в работу команды благодаря аналитическому мышлению, вниманию к деталям, ответственности и стремлению к постоянному обучению.",
-      "С уважением, Rasim Abdullayev"
+      "Уважаемый специалист по подбору персонала!",
+      "Хочу выразить заинтересованность в позиции Junior Data Analyst (младшего аналитика данных). Образование в области информационных технологий и профессиональный опыт управления проектами, операционной деятельности и учёта запасов позволили мне на практике понять, какую роль точные данные, системная отчётность и аналитическое мышление играют в принятии бизнес-решений. Переход в аналитику данных — осознанный шаг, направленный на объединение этого опыта с техническими навыками.",
+      "Во время стажировки по аналитике и обработке данных в Агентстве информационных и коммуникационных технологий (ICTA) я выполнял практические задачи с использованием Microsoft Excel, SQL, Power BI и Python. Мои продвинутые навыки Excel включают формулы и функции, Power Query, сводные таблицы, очистку и проверку данных, а также разработку дашбордов. Обладаю базовыми знаниями SQL и практическим опытом составления запросов для ИИ, автоматизированного извлечения данных с сайтов и разработки приложений на основе ИИ.",
+      "Предыдущие должности сформировали у меня понимание бизнес-процессов. В LEDAZ я анализировал тендерные требования, сравнивал предложения поставщиков, работал с бюджетами, координировал графики проектов и логистику. В группе компаний Veyseloglu вёл учёт запасов, сверял складские остатки, обрабатывал финансовые и операционные транзакции и использовал ERP-системы Mikro, Logo и Tiger. На III Играх СНГ в качестве координатора билетных операций готовил ежедневные отчёты о продажах билетов и финансовые отчёты. Работа на Formula 1 и CEV Trendyol EuroVolley укрепила мои навыки координации команд, решения операционных задач и работы в условиях высокой нагрузки.",
+      "Применяю технические знания и в практических проектах. Для MagistrAI я с нуля спроектировал структуру базы данных в Excel, систематизировал данные, перенёс их в базу SQL и интегрировал Google Gemini API в отдельные функции платформы. Проекты CVYarat и Lingo отражают мой интерес к созданию доступных цифровых решений, ориентированных на пользователей.",
+      "Стремлюсь внести вклад в работу команды, обеспечивая качество данных, подготовку отчётности и интерпретацию бизнес-информации. Внимание к деталям, ответственность и непрерывное профессиональное развитие — мои основные принципы. Буду рад возможности обсудить, как мой опыт и аналитические навыки могут быть полезны вашей организации. Благодарю за уделённое время и рассмотрение моей кандидатуры.",
+      "С уважением,\nRasim Abdullayev"
     ],
     "sec_contact_label": "Контакты",
     "sec_contact_title": "Контактная информация",
@@ -1762,7 +1907,12 @@ const ui = {
     "send_mail": "Отправить письмо",
     "whatsapp": "WhatsApp",
     "top": "Наверх",
-    "rights": "Все права защищены."
+    "rights": "Все права защищены.",
+    "cv_sports": "Международные спортивные мероприятия",
+    "cv_excel": "Владение Excel",
+    "cv_fields": "Основные профессиональные направления",
+    "cv_pm": "Опыт управления проектами",
+    "cv_advanced": "Продвинутый"
   }
 };
 
@@ -1805,7 +1955,8 @@ function renderStats() {
   const stats = [
     [profile.experiences.length, tr("stat_exp")],
     [projects.length, tr("stat_projects")],
-    [profile.certs.length, tr("stat_certs")]
+    [profile.certs.length, tr("stat_certs")],
+    ["3+", tr("cv_sports")], [tr("cv_advanced"), tr("cv_excel")], ["2", tr("cv_fields")], ["1+", tr("cv_pm")]
   ];
   $("#stats").innerHTML = stats.map(([n, label]) => `<div class="stat"><strong>${esc(n)}</strong><span>${esc(label)}</span></div>`).join("");
 }
@@ -1825,7 +1976,7 @@ function renderExperiences() {
 function renderProjects() {
   $("#projectGrid").innerHTML = projects.map(project => `
     <article class="project-card reveal">
-      <span class="kind">${esc(pick(project.kind))}</span>
+      <span class="kind">${esc(pick(project.kind))}${project.period ? " · " + esc(project.period) : ""}</span>
       <h3>${esc(project.title)}</h3>
       <p>${esc(pick(project.desc))}</p>
       <div class="tag-row">${project.tags.map(tag => `<span class="tag">${esc(tag)}</span>`).join("")}</div>
@@ -1864,7 +2015,7 @@ function certCategory(tagString) {
 function renderFilters() {
   const categories = ["all", "hackerrank", "sport", "volunteer", "training", "award"];
   $("#filters").innerHTML = categories.map(category => `<button type="button" class="filter-btn ${state.filter === category ? "active" : ""}" data-filter="${category}">${esc(tr("filter_" + category))}</button>`).join("");
-  $$(".filter-btn").forEach(btn => btn.addEventListener("click", () => { state.filter = btn.dataset.filter; renderFilters(); renderCertificates(); }));
+  $$(".filter-btn").forEach(btn => btn.addEventListener("click", () => { state.filter = btn.dataset.filter; renderFilters(); renderCertificates(); revealOnScroll(); }));
 }
 
 function renderCertificates() {
@@ -1905,11 +2056,16 @@ function renderContact() {
     </a>`).join("");
 }
 
+let revealObserver;
 function revealOnScroll() {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("in"); });
-  }, { threshold: .1 });
-  $$(".reveal").forEach(el => observer.observe(el));
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    $$('.reveal').forEach(el => el.classList.add('in')); return;
+  }
+  if (revealObserver) revealObserver.disconnect();
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); } });
+  }, {threshold:0, rootMargin:'0px 0px -12px 0px'});
+  $$('.reveal:not(.in):not(.hidden)').forEach(el => revealObserver.observe(el));
 }
 
 function setLanguage(lang) {
@@ -1936,7 +2092,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#year").textContent = new Date().getFullYear();
   $$(".lang-btn").forEach(btn => btn.addEventListener("click", () => setLanguage(btn.dataset.lang)));
   $("#printBtn").addEventListener("click", () => window.print());
-  $("#certSearch").addEventListener("input", event => { state.query = event.target.value; renderCertificates(); });
+  $("#certSearch").addEventListener("input", event => { state.query = event.target.value; renderCertificates(); revealOnScroll(); });
   $("#copyLetter").addEventListener("click", async () => {
     const text = tr("letter").join("\n\n");
     try { await navigator.clipboard.writeText(text); $("#copyLetter").textContent = tr("copied"); setTimeout(() => $("#copyLetter").textContent = tr("copy_letter"), 1400); } catch {}
@@ -1987,124 +2143,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   syncActiveNav();
   bindCardGlow();
-});
 
-/* V4 visual layer only: canvas network, subtle 3D tilt and staggered reveals. Content data above remains unchanged. */
-document.addEventListener("DOMContentLoaded", () => {
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const addNetworkCanvas = () => {
-    if (prefersReduced || document.getElementById("matrixCanvas")) return;
-    const canvas = document.createElement("canvas");
-    canvas.id = "matrixCanvas";
-    canvas.setAttribute("aria-hidden", "true");
-    document.body.prepend(canvas);
-    const ctx = canvas.getContext("2d");
-    let width = 0;
-    let height = 0;
-    let nodes = [];
-    const pointer = { x: -9999, y: -9999 };
-
-    const resize = () => {
-      width = canvas.width = Math.floor(window.innerWidth * window.devicePixelRatio);
-      height = canvas.height = Math.floor(window.innerHeight * window.devicePixelRatio);
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
-      const count = Math.min(82, Math.max(34, Math.floor(window.innerWidth / 19)));
-      nodes = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - .5) * .26 * window.devicePixelRatio,
-        vy: (Math.random() - .5) * .26 * window.devicePixelRatio,
-        r: (Math.random() * 1.6 + .8) * window.devicePixelRatio
-      }));
+  // A lightweight animated network: nodes, links and moving data packets.
+  const canvas = document.getElementById("matrixCanvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d", { alpha: true });
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let width = 0, height = 0, frame = 0, nodes = [];
+    const createNodes = () => Array.from({ length: Math.min(54, Math.max(24, Math.round(width / 26))) }, () => ({
+      x: Math.random() * width, y: Math.random() * height,
+      vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22,
+      phase: Math.random() * Math.PI * 2
+    }));
+    const resizeNetwork = () => {
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+      width = window.innerWidth; height = window.innerHeight;
+      canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);
+      canvas.style.width = `${width}px`; canvas.style.height = `${height}px`;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0); nodes = createNodes(); drawNetwork(0);
     };
-
-    const draw = () => {
+    const drawNetwork = time => {
+      if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
-      const maxDist = 145 * window.devicePixelRatio;
-      const px = pointer.x * window.devicePixelRatio;
-      const py = pointer.y * window.devicePixelRatio;
-      for (const node of nodes) {
-        node.x += node.vx;
-        node.y += node.vy;
-        if (node.x < 0 || node.x > width) node.vx *= -1;
-        if (node.y < 0 || node.y > height) node.vy *= -1;
-      }
-      for (let i = 0; i < nodes.length; i++) {
-        const a = nodes[i];
+      nodes.forEach((node, i) => {
+        if (!reducedMotion) {
+          node.x += node.vx; node.y += node.vy;
+          if (node.x < -10 || node.x > width + 10) node.vx *= -1;
+          if (node.y < -10 || node.y > height + 10) node.vy *= -1;
+        }
         for (let j = i + 1; j < nodes.length; j++) {
-          const b = nodes[j];
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const d = Math.hypot(dx, dy);
-          if (d < maxDist) {
-            const alpha = (1 - d / maxDist) * .22;
-            ctx.strokeStyle = `rgba(102,232,255,${alpha})`;
-            ctx.lineWidth = .7 * window.devicePixelRatio;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
+          const other = nodes[j], dx = node.x - other.x, dy = node.y - other.y;
+          const distance = Math.hypot(dx, dy);
+          if (distance < 142) {
+            const alpha = (1 - distance / 142) * .18;
+            ctx.strokeStyle = `rgba(98,223,202,${alpha})`; ctx.lineWidth = .7;
+            ctx.beginPath(); ctx.moveTo(node.x, node.y); ctx.lineTo(other.x, other.y); ctx.stroke();
           }
         }
-        const pd = Math.hypot(a.x - px, a.y - py);
-        if (pd < 190 * window.devicePixelRatio) {
-          ctx.strokeStyle = `rgba(181,108,255,${(1 - pd / (190 * window.devicePixelRatio)) * .24})`;
-          ctx.lineWidth = .8 * window.devicePixelRatio;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(px, py);
-          ctx.stroke();
+        const pulse = reducedMotion ? .8 : .55 + (Math.sin(time * .0015 + node.phase) + 1) * .18;
+        ctx.fillStyle = `rgba(141,182,239,${pulse})`; ctx.beginPath(); ctx.arc(node.x, node.y, 1.15, 0, Math.PI * 2); ctx.fill();
+        if (i % 5 === 0) {
+          const packet = (time * .00008 + node.phase / (Math.PI * 2)) % 1;
+          ctx.fillStyle = `rgba(98,223,202,${.25 + packet * .55})`;
+          ctx.beginPath(); ctx.arc(node.x + Math.cos(time * .0007 + node.phase) * 5, node.y + Math.sin(time * .0007 + node.phase) * 5, 1.7, 0, Math.PI * 2); ctx.fill();
         }
-        ctx.fillStyle = "rgba(170,244,255,.78)";
-        ctx.beginPath();
-        ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      requestAnimationFrame(draw);
+      });
+      if (!reducedMotion) frame = requestAnimationFrame(drawNetwork);
     };
-
-    window.addEventListener("resize", resize, { passive: true });
-    window.addEventListener("pointermove", event => { pointer.x = event.clientX; pointer.y = event.clientY; }, { passive: true });
-    resize();
-    draw();
-  };
-
-  const addTilt = () => {
-    if (prefersReduced) return;
-    document.addEventListener("pointermove", event => {
-      const card = event.target.closest?.(".project-card, .profile-card, .contact-card, .edu-card");
-      if (!card) return;
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - .5;
-      const y = (event.clientY - rect.top) / rect.height - .5;
-      const amount = card.classList.contains("profile-card") ? 6 : 3.2;
-      card.style.transform = `perspective(900px) rotateX(${(-y * amount).toFixed(2)}deg) rotateY(${(x * amount).toFixed(2)}deg) translateY(-5px)`;
-    }, { passive: true });
-    document.addEventListener("pointerout", event => {
-      const card = event.target.closest?.(".project-card, .profile-card, .contact-card, .edu-card");
-      if (card) card.style.transform = "";
-    }, { passive: true });
-  };
-
-  const addStagger = () => {
-    const setDelay = selector => document.querySelectorAll(selector).forEach((el, i) => {
-      el.style.transitionDelay = `${Math.min(i * 45, 360)}ms`;
+    resizeNetwork();
+    if (!reducedMotion) frame = requestAnimationFrame(drawNetwork);
+    window.addEventListener("resize", resizeNetwork, { passive: true });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) cancelAnimationFrame(frame);
+      else if (!reducedMotion) frame = requestAnimationFrame(drawNetwork);
     });
-    setDelay(".experience-card");
-    setDelay(".project-card");
-    setDelay(".skill-card");
-    setDelay(".edu-card");
-    setDelay(".cert-card");
-    setDelay(".contact-card");
-  };
-
-  setTimeout(() => {
-    addNetworkCanvas();
-    addTilt();
-    addStagger();
-  }, 80);
+  }
 });
 
 </script>
