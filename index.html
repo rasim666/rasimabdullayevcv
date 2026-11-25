@@ -446,6 +446,125 @@ body::before{background:linear-gradient(145deg,#0b141e,#102330 45%,#0b141e);tran
 @media(prefers-reduced-motion:reduce){.analytics-console::before,.console-live-dot,.foot-pulse,.console-spark-icon,.chart-line,.chart-point,.chart-scan,.mini-bars i,.pipeline-steps span,.pipeline-steps b::after{animation:none!important}.chart-line{stroke-dashoffset:0}.mini-bars i{transform:scaleY(1)}}
 @media print{.analytics-console,#matrixCanvas{display:none!important}}
 </style>
+
+<style id="cv-print-fix">
+@media print {
+  html, body { height: auto !important; overflow: visible !important; }
+  .reveal, .reveal.in, [data-reveal] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .experience-card, .project-card, .skill-card, .edu-card, .cert-card,
+  .contact-card, .letter-card, .stat, .section-head, .timeline, .project-grid,
+  .skill-grid, .education-grid, .cert-grid, .contact-grid, #letterText {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    break-inside: avoid;
+  }
+  .section, section { display: block !important; visibility: visible !important; }
+  #experienceList, #projectGrid, #skillGrid, #educationGrid, #certificateGrid,
+  #certGrid, #contactGrid { display: grid !important; }
+  .hero-actions, .topbar, .menu-btn, .skip-link, .site-bg, #matrixCanvas,
+  .analytics-console, .terminal-card, .cert-tools, .footer { display: none !important; }
+}
+</style>
+
+
+<style id="ats-cv-print-system">
+.cv-print-modal[hidden] { display: none !important; }
+.cv-print-modal {
+  position: fixed; inset: 0; z-index: 99999; display: flex; flex-direction: column;
+  background: #e8edf3; color: #172334;
+}
+.cv-print-toolbar {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: center;
+  justify-content: space-between; gap: 18px; padding: 14px 22px;
+  background: #0b1728; color: #f7fbff; border-bottom: 1px solid #263c55;
+  box-shadow: 0 8px 24px rgba(4,12,24,.18);
+}
+.cv-print-toolbar-copy { display:flex; flex-direction:column; gap:4px; }
+.cv-print-toolbar-copy strong { font-size:14px; letter-spacing:.02em; }
+.cv-print-toolbar-copy span { color:#aebdd0; font-size:12px; }
+.cv-print-toolbar-actions { display:flex; align-items:center; gap:10px; }
+.cv-print-toolbar button {
+  appearance:none; border:1px solid #3b526d; border-radius:9px; padding:10px 14px;
+  font:600 13px/1.2 Arial,sans-serif; cursor:pointer;
+}
+.cv-preview-close { color:#edf5ff; background:#14253b; }
+.cv-preview-print { color:#061b25; background:#64e0cc; border-color:#64e0cc !important; }
+.cv-print-viewport { flex:1; overflow:auto; padding:28px 18px 48px; }
+.ats-sheet {
+  box-sizing:border-box; width:210mm; min-height:297mm; margin:0 auto; padding:15mm 16mm;
+  background:#fff; color:#202a36; box-shadow:0 10px 38px rgba(16,32,52,.18);
+  font-family:Arial,Helvetica,sans-serif; font-size:9.2pt; line-height:1.42;
+  letter-spacing:0; overflow-wrap:anywhere;
+}
+.ats-header { padding-bottom:12px; border-bottom:2px solid #1c354f; margin-bottom:14px; }
+.ats-name { margin:0; color:#10243a; font-size:25pt; line-height:1.08; font-weight:700; letter-spacing:-.035em; }
+.ats-target { margin:6px 0 9px; color:#31536f; font-size:10pt; font-weight:700; letter-spacing:.035em; text-transform:uppercase; }
+.ats-contact { display:flex; flex-wrap:wrap; gap:4px 14px; color:#485666; font-size:8.4pt; }
+.ats-contact span { white-space:normal; }
+.ats-section { margin:0 0 13px; }
+.ats-section-title {
+  margin:0 0 7px; padding-bottom:4px; border-bottom:1px solid #aeb9c5;
+  color:#173650; font-size:10.2pt; line-height:1.2; font-weight:700;
+  text-transform:uppercase; letter-spacing:.075em;
+}
+.ats-summary { margin:0; color:#293746; }
+.ats-job, .ats-project, .ats-education, .ats-cert { margin:0 0 9px; break-inside:avoid; page-break-inside:avoid; }
+.ats-item-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.ats-role { margin:0; color:#172b40; font-size:9.5pt; font-weight:700; }
+.ats-period { flex:none; color:#526273; font-size:8.2pt; font-weight:600; text-align:right; }
+.ats-company { margin:2px 0 3px; color:#3f5368; font-size:8.6pt; font-weight:600; }
+.ats-description { margin:0; color:#293746; font-size:8.65pt; line-height:1.4; }
+.ats-project-url { display:block; margin-top:2px; color:#405e78; font-size:8pt; }
+.ats-list { margin:0; padding-left:16px; color:#293746; }
+.ats-list li { margin:0 0 2px; }
+.ats-skill-list { margin:0; color:#293746; }
+.ats-plain-line { margin:0 0 3px; }
+.ats-cert-title { margin:0; font-weight:700; color:#24374b; }
+.ats-cert-meta { margin:1px 0 0; color:#566575; font-size:8.2pt; }
+.ats-footer { margin-top:12px; padding-top:6px; border-top:1px solid #d3dbe3; color:#718092; font-size:7.5pt; }
+@media(max-width:760px) {
+  .cv-print-toolbar { align-items:flex-start; flex-direction:column; padding:12px 14px; }
+  .cv-print-toolbar-actions { width:100%; }
+  .cv-print-toolbar-actions button { flex:1; }
+  .cv-print-viewport { padding:12px 8px 24px; }
+  .ats-sheet { width:100%; min-height:0; padding:24px 20px; font-size:9pt; }
+  .ats-name { font-size:22pt; }
+  .ats-item-head { align-items:flex-start; flex-direction:column; gap:1px; }
+  .ats-period { text-align:left; }
+}
+@page { size:A4; margin:14mm 15mm 14mm; }
+@media print {
+  html, body { width:auto !important; height:auto !important; margin:0 !important; padding:0 !important; overflow:visible !important; background:#fff !important; }
+  body.cv-print-mode > :not(#cvPrintModal) { display:none !important; }
+  body.cv-print-mode #cvPrintModal {
+    display:block !important; position:static !important; inset:auto !important; width:auto !important;
+    height:auto !important; min-height:0 !important; overflow:visible !important; padding:0 !important;
+    margin:0 !important; background:#fff !important; color:#202a36 !important;
+  }
+  body.cv-print-mode .cv-print-toolbar { display:none !important; }
+  body.cv-print-mode .cv-print-viewport { display:block !important; overflow:visible !important; padding:0 !important; margin:0 !important; }
+  body.cv-print-mode .ats-sheet {
+    display:block !important; width:auto !important; min-height:0 !important; max-width:none !important;
+    margin:0 !important; padding:0 !important; border:0 !important; box-shadow:none !important;
+    overflow:visible !important; color:#202a36 !important; background:#fff !important;
+    font-size:9pt !important;
+  }
+  body.cv-print-mode .ats-section { display:block !important; visibility:visible !important; }
+  body.cv-print-mode .ats-job, body.cv-print-mode .ats-project,
+  body.cv-print-mode .ats-education, body.cv-print-mode .ats-cert {
+    break-inside:avoid !important; page-break-inside:avoid !important;
+  }
+  body.cv-print-mode a { color:inherit !important; text-decoration:none !important; }
+}
+</style>
+
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -2056,6 +2175,148 @@ function renderContact() {
     </a>`).join("");
 }
 
+
+function renderAtsCvPreview() {
+  const labels = {
+    az: {
+      summary:"Peşəkar xülasə", experience:"İş təcrübəsi", education:"Təhsil",
+      skills:"Texniki və peşəkar bacarıqlar", projects:"Layihələr",
+      certificates:"Sertifikatlar və nailiyyətlər", languages:"Dil bilikləri",
+      additional:"Əlavə məlumat", phone:"Telefon", email:"E-poçt",
+      location:"Məkan", military:"Hərbi xidmət", license:"Sürücülük vəsiqəsi",
+      printTitle:"ATS formatında CV önbaxışı",
+      printHint:"Çap və PDF faylı bu ağ, birsütunlu şablonun eyni quruluşunda hazırlanacaq.",
+      close:"Portfolioya qayıt", print:"Çap et / PDF saxla"
+    },
+    en: {
+      summary:"Professional Summary", experience:"Work Experience", education:"Education",
+      skills:"Technical & Professional Skills", projects:"Projects",
+      certificates:"Certificates & Achievements", languages:"Languages",
+      additional:"Additional Information", phone:"Phone", email:"Email",
+      location:"Location", military:"Military Service", license:"Driving Licence",
+      printTitle:"ATS-formatted CV preview",
+      printHint:"The printed copy and PDF will use this same clean, single-column layout.",
+      close:"Back to portfolio", print:"Print / Save as PDF"
+    },
+    ru: {
+      summary:"Профессиональное резюме", experience:"Опыт работы", education:"Образование",
+      skills:"Технические и профессиональные навыки", projects:"Проекты",
+      certificates:"Сертификаты и достижения", languages:"Языки",
+      additional:"Дополнительная информация", phone:"Телефон", email:"Электронная почта",
+      location:"Местоположение", military:"Военная служба", license:"Водительское удостоверение",
+      printTitle:"Предпросмотр CV в формате ATS",
+      printHint:"Печатная версия и PDF будут иметь эту же лаконичную одноколоночную структуру.",
+      close:"Вернуться к портфолио", print:"Печать / Сохранить PDF"
+    }
+  };
+  const L = labels[state.lang] || labels.az;
+  const langIndex = ({az:0,en:1,ru:2})[state.lang] ?? 0;
+  const educationItems = profile.education.filter(item => ["BBU","AMEA","BİTK"].includes(item.tag));
+  const skillNames = profile.skills.map(skill => skill[langIndex]).filter(Boolean);
+  const softSkills = (profile.soft && profile.soft[state.lang]) || [];
+  const languages = state.lang === "en"
+    ? ["Azerbaijani — Native", "Turkish — C2", "English — B1", "Russian — B1"]
+    : state.lang === "ru"
+      ? ["Азербайджанский — родной", "Турецкий — C2", "Английский — B1", "Русский — B1"]
+      : ["Azərbaycan dili — Ana dili", "Türk dili — C2", "İngilis dili — B1", "Rus dili — B1"];
+  const additional = profile.education.filter(item => ["HX","B/C"].includes(item.tag));
+  const section = (title, body) => `<section class="ats-section"><h2 class="ats-section-title">${esc(title)}</h2>${body}</section>`;
+
+  const contactLine = [
+    `${esc(L.phone)}: ${esc(contact.phone)}`,
+    `${esc(L.email)}: ${esc(contact.email)}`,
+    `${esc(L.location)}: ${esc(pick(contact.location))}`,
+    `LinkedIn: ${esc(contact.linkedin)}`
+  ].map(value => `<span>${value}</span>`).join("");
+
+  const summary = section(L.summary, `<p class="ats-summary">${esc(tr("hero_desc"))}</p>`);
+
+  const experience = section(L.experience, profile.experiences.map(item => `
+    <article class="ats-job">
+      <div class="ats-item-head">
+        <h3 class="ats-role">${esc(pick(item.role))}</h3>
+        <span class="ats-period">${esc(pick(item.period))}</span>
+      </div>
+      <p class="ats-company">${esc(pick(item.company))}</p>
+      <p class="ats-description">${esc(pick(item.desc))}</p>
+    </article>`).join(""));
+
+  const education = section(L.education, educationItems.map(item => `
+    <article class="ats-education">
+      <div class="ats-item-head">
+        <h3 class="ats-role">${esc(pick(item.title))}</h3>
+        <span class="ats-period">${esc(pick(item.period))}</span>
+      </div>
+      <p class="ats-description">${esc(pick(item.desc))}</p>
+    </article>`).join(""));
+
+  const skills = section(L.skills, `
+    <p class="ats-skill-list">${skillNames.map(esc).join(" · ")}</p>
+    ${softSkills.length ? `<p class="ats-plain-line"><strong>${state.lang==="en"?"Core competencies":state.lang==="ru"?"Ключевые компетенции":"Əsas kompetensiyalar"}:</strong> ${softSkills.map(esc).join(" · ")}</p>` : ""}
+  `);
+
+  const projectSection = section(L.projects, projects.map(project => `
+    <article class="ats-project">
+      <div class="ats-item-head">
+        <h3 class="ats-role">${esc(project.title)}</h3>
+        <span class="ats-period">${esc(project.period || "")}</span>
+      </div>
+      <p class="ats-description">${esc(pick(project.desc))}</p>
+      <span class="ats-project-url">${esc(project.url)}</span>
+    </article>`).join(""));
+
+  const certificates = section(L.certificates, profile.certs.map(cert => {
+    const [issuer, title, date] = cert;
+    return `<article class="ats-cert"><p class="ats-cert-title">${esc(pick(issuer))} — ${esc(pick(title))}</p><p class="ats-cert-meta">${esc(date)}</p></article>`;
+  }).join(""));
+
+  const languageSection = section(L.languages, `<p class="ats-plain-line">${languages.map(esc).join(" · ")}</p>`);
+  const additionalSection = section(L.additional, additional.map(item => {
+    const label = item.tag === "HX" ? L.military : L.license;
+    return `<p class="ats-plain-line"><strong>${esc(label)}:</strong> ${esc(pick(item.desc))}</p>`;
+  }).join(""));
+
+  $("#cvPrintSheet").innerHTML = `
+    <header class="ats-header">
+      <h1 class="ats-name">Rasim Abdullayev</h1>
+      <p class="ats-target">${esc(tr("hero_subtitle"))}</p>
+      <div class="ats-contact">${contactLine}</div>
+    </header>
+    ${summary}
+    ${experience}
+    ${education}
+    ${skills}
+    ${projectSection}
+    ${languageSection}
+    ${additionalSection}
+    ${certificates}
+    <footer class="ats-footer">Rasim Abdullayev · ${esc(pick(contact.location))}</footer>
+  `;
+
+  $("#cvPrintPreviewTitle").textContent = L.printTitle;
+  $("#cvPrintPreviewHint").textContent = L.printHint;
+  $("#cvPrintClose").textContent = L.close;
+  $("#cvPrintNow").textContent = L.print;
+}
+
+function openAtsCvPreview() {
+  renderAtsCvPreview();
+  const modal = $("#cvPrintModal");
+  modal.hidden = false;
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("cv-preview-open");
+  $("#cvPrintClose").focus();
+}
+
+function closeAtsCvPreview() {
+  const modal = $("#cvPrintModal");
+  modal.hidden = true;
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("cv-preview-open", "cv-print-mode");
+  $("#printBtn")?.focus();
+}
+
+
 let revealObserver;
 function revealOnScroll() {
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -2091,7 +2352,24 @@ function renderAll() {
 document.addEventListener("DOMContentLoaded", () => {
   $("#year").textContent = new Date().getFullYear();
   $$(".lang-btn").forEach(btn => btn.addEventListener("click", () => setLanguage(btn.dataset.lang)));
-  $("#printBtn").addEventListener("click", () => window.print());
+  const printBtn = $("#printBtn");
+  if (printBtn) printBtn.addEventListener("click", openAtsCvPreview);
+
+  $("#cvPrintClose")?.addEventListener("click", closeAtsCvPreview);
+  $("#cvPrintNow")?.addEventListener("click", () => {
+    // The exact ATS preview shown on screen is the only content sent to the printer.
+    document.body.classList.add("cv-print-mode");
+    requestAnimationFrame(() => window.print());
+  });
+  $("#cvPrintModal")?.addEventListener("click", event => {
+    if (event.target.id === "cvPrintModal") closeAtsCvPreview();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !$("#cvPrintModal")?.hidden) closeAtsCvPreview();
+  });
+  window.addEventListener("afterprint", () => {
+    document.body.classList.remove("cv-print-mode");
+  });
   $("#certSearch").addEventListener("input", event => { state.query = event.target.value; renderCertificates(); revealOnScroll(); });
   $("#copyLetter").addEventListener("click", async () => {
     const text = tr("letter").join("\n\n");
@@ -2203,3 +2481,20 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
+<div id="cvPrintModal" class="cv-print-modal" hidden aria-hidden="true">
+  <div class="cv-print-toolbar">
+    <div class="cv-print-toolbar-copy">
+      <strong id="cvPrintPreviewTitle">ATS CV preview</strong>
+      <span id="cvPrintPreviewHint">This is the exact layout that will be printed or saved as PDF.</span>
+    </div>
+    <div class="cv-print-toolbar-actions">
+      <button class="cv-preview-close" id="cvPrintClose" type="button">Back to portfolio</button>
+      <button class="cv-preview-print" id="cvPrintNow" type="button">Print / Save as PDF</button>
+    </div>
+  </div>
+  <div class="cv-print-viewport">
+    <article id="cvPrintSheet" class="ats-sheet" aria-label="ATS-friendly CV preview"></article>
+  </div>
+</div>
+
