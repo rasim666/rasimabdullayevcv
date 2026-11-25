@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081522">
+  <meta name="description" content="Rasim Abdullayev — Data Detective. Interactive data analytics mini-game.">
+  <title>Data Detective | Rasim Abdullayev</title>
+  <style>
+    :root {
+      --bg:#071321; --panel:#0d1e30; --panel2:#10263b; --line:rgba(157,190,214,.15);
+      --text:#eaf3fb; --muted:#9eb1c4; --teal:#62e3ce; --blue:#77baff;
+      --good:#6ee7a8; --bad:#ff8e98; --gold:#ffd27a; --radius:20px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;color:var(--text);background:
+      radial-gradient(ellipse at 12% 8%,rgba(42,120,153,.20),transparent 35%),
+      radial-gradient(ellipse at 88% 24%,rgba(51,93,166,.16),transparent 34%),var(--bg)}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .shell{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.01em}
+    .brand-mark{width:42px;height:42px;border:1px solid rgba(98,227,206,.42);border-radius:13px;display:grid;place-items:center;color:var(--teal);font-weight:850;background:linear-gradient(145deg,rgba(98,227,206,.15),rgba(119,186,255,.06));box-shadow:0 0 28px rgba(98,227,206,.10)}
+    .brand small{display:block;color:var(--muted);font-size:11px;font-weight:550;margin-top:2px}
+    .top-actions{display:flex;align-items:center;gap:10px}
+    .back,.lang button{border:1px solid var(--line);border-radius:11px;background:rgba(13,30,48,.8);color:var(--text);padding:10px 13px;font-size:12px;font-weight:700;cursor:pointer}
+    .lang{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:13px;background:rgba(13,30,48,.75)}
+    .lang button{padding:7px 9px;border:0;background:transparent;color:var(--muted)}
+    .lang button.active{background:rgba(98,227,206,.15);color:var(--teal)}
+    .hero{padding:62px 0 34px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .pulse{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(98,227,206,.5);animation:pulse 1.8s infinite}
+    @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(98,227,206,0)}100%{box-shadow:0 0 0 0 rgba(98,227,206,0)}}
+    h1{font-size:clamp(38px,6vw,66px);line-height:.98;letter-spacing:-.055em;margin:18px 0 16px}
+    h1 span{background:linear-gradient(90deg,#eaf3fb,#62e3ce 58%,#77baff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:660px;color:var(--muted);line-height:1.75;font-size:15px;margin:0}
+    .hero-visual{position:relative;min-height:220px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(17,43,65,.95),rgba(9,25,42,.95));padding:22px;overflow:hidden}
+    .visual-head{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .bars{height:130px;display:flex;align-items:end;gap:12px;padding:20px 10px 0}
+    .bar{flex:1;border-radius:8px 8px 2px 2px;background:linear-gradient(180deg,var(--teal),rgba(98,227,206,.18));transform-origin:bottom;animation:grow .9s both;position:relative;min-width:10px}
+    .bar:nth-child(2){animation-delay:.12s}.bar:nth-child(3){animation-delay:.24s}.bar:nth-child(4){animation-delay:.36s}.bar:nth-child(5){animation-delay:.48s}
+    @keyframes grow{from{transform:scaleY(.05);opacity:.3}to{transform:scaleY(1);opacity:1}}
+    .bar:after{content:attr(data-label);position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--muted)}
+    .game-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:20px;padding:16px 0 70px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(14,32,51,.96),rgba(9,24,40,.96));box-shadow:0 18px 55px rgba(0,0,0,.18)}
+    .game-card{padding:24px}
+    .card-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px}
+    .card-kicker{font-size:10px;color:var(--teal);font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .round{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:7px 10px;white-space:nowrap}
+    .progress{height:6px;background:#1b3044;border-radius:99px;overflow:hidden;margin:0 0 24px}
+    .progress span{display:block;height:100%;width:25%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--blue));transition:width .35s ease}
+    h2{font-size:22px;letter-spacing:-.025em;margin:0 0 9px}
+    .question-copy{color:var(--muted);font-size:13px;line-height:1.65;margin:0 0 20px}
+    .dataset-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;margin:18px 0 22px}
+    table{width:100%;border-collapse:collapse;min-width:520px;font-size:12px}
+    th{text-align:left;color:#9fb5c9;background:rgba(119,186,255,.07);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+    th,td{padding:11px 13px;border-bottom:1px solid rgba(157,190,214,.09);white-space:nowrap}
+    tbody tr:last-child td{border-bottom:0}
+    td{color:#dce8f2}
+    .duplicate-tag{color:var(--bad);font-size:9px;font-weight:800;letter-spacing:.08em;margin-left:6px}
+    .question-label{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:11px}
+    .question-label:before{content:"";width:18px;height:1px;background:var(--teal)}
+    .answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .answer{min-height:52px;text-align:left;border:1px solid rgba(157,190,214,.18);border-radius:12px;padding:13px 15px;background:rgba(18,41,62,.7);color:var(--text);font-weight:650;font-size:13px;cursor:pointer;transition:transform .18s,border-color .18s,background .18s}
+    .answer:hover:not(:disabled){transform:translateY(-2px);border-color:rgba(98,227,206,.65);background:rgba(98,227,206,.08)}
+    .answer:disabled{cursor:default;opacity:.8}
+    .answer.correct{border-color:rgba(110,231,168,.65);background:rgba(110,231,168,.12);color:var(--good);opacity:1}
+    .answer.wrong{border-color:rgba(255,142,152,.65);background:rgba(255,142,152,.10);color:var(--bad);opacity:1}
+    .feedback{display:none;margin-top:16px;padding:14px 15px;border-radius:12px;background:rgba(119,186,255,.08);border:1px solid rgba(119,186,255,.22);font-size:12px;line-height:1.65;color:#dbeaf8}
+    .feedback.show{display:block;animation:fadeUp .25s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+    .feedback strong{color:var(--teal)}
+    .next-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px}
+    .hint{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:8px 0}
+    .next{border:0;border-radius:11px;padding:12px 17px;background:var(--teal);color:#06221f;font-size:12px;font-weight:850;cursor:pointer;box-shadow:0 8px 24px rgba(98,227,206,.14)}
+    .next:disabled{opacity:.35;cursor:not-allowed}
+    .side{display:flex;flex-direction:column;gap:16px}
+    .score-card{padding:21px}
+    .score-label{color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:800}
+    .score-value{font-size:44px;font-weight:850;letter-spacing:-.05em;margin:6px 0 2px}
+    .score-value span{font-size:15px;color:var(--muted);letter-spacing:0;font-weight:600}
+    .score-note{font-size:11px;color:var(--muted)}
+    .metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:18px}
+    .metric{padding:13px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}
+    .metric strong{display:block;font-size:20px;color:var(--teal);letter-spacing:-.03em}
+    .metric span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+    .insight-card{padding:21px}
+    .insight-card h3{font-size:14px;margin:0 0 12px}
+    .insight-row{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted);margin:12px 0 6px}
+    .track{height:7px;border-radius:99px;background:#1b3044;overflow:hidden}
+    .track span{height:100%;display:block;border-radius:99px;background:linear-gradient(90deg,#62e3ce,#77baff);width:0;transition:width .6s ease}
+    .tip{padding:17px 19px;color:var(--muted);font-size:11px;line-height:1.65}
+    .tip strong{color:var(--text)}
+    .result{display:none;text-align:center;padding:32px 18px}
+    .result.show{display:block;animation:fadeUp .35s ease both}
+    .result-icon{width:68px;height:68px;border-radius:22px;margin:0 auto 16px;display:grid;place-items:center;background:rgba(98,227,206,.12);border:1px solid rgba(98,227,206,.35);color:var(--teal);font-size:28px}
+    .result h2{font-size:30px}
+    .result p{max-width:500px;margin:10px auto 20px;color:var(--muted);line-height:1.7;font-size:13px}
+    .result .next{margin:5px}
+    .footer{border-top:1px solid var(--line);padding:20px 0 28px;color:var(--muted);font-size:11px}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:42px}.hero-visual{min-height:190px}.game-layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.tip{grid-column:1/-1}}
+    @media(max-width:560px){.shell{width:min(100% - 26px,1160px)}.topbar{height:auto;min-height:70px;gap:10px}.brand small{font-size:9px}.brand-mark{width:37px;height:37px}.top-actions{gap:5px}.back{padding:9px 10px;font-size:10px}.lang{gap:0;padding:3px}.lang button{padding:7px 6px;font-size:10px}.hero{padding:38px 0 22px;gap:22px}h1{font-size:43px}.hero p{font-size:13px}.game-card{padding:17px}.answers{grid-template-columns:1fr}.side{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="index.html" aria-label="Rasim Abdullayev portfolio">
+      <span class="brand-mark">RA</span>
+      <span>Rasim Abdullayev<small>DATA ANALYTICS · INTERACTIVE CHALLENGE</small></span>
+    </a>
+    <div class="top-actions">
+      <div class="lang" aria-label="Language">
+        <button type="button" data-lang="az" class="active">AZ</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ru">RU</button>
+      </div>
+      <a class="back" id="backLink" href="index.html">← Portfolio</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span><span data-t="eyebrow">INTERAKTİV DATA ANALİTİKA SINAĞI</span></div>
+        <h1><span data-t="title">Data Detective</span><br><span data-t="subtitle">Məlumatı araşdır. Nəticəni tap.</span></h1>
+        <p data-t="intro">Kiçik bir satış datasını analiz et, təkrarlanan sətri müəyyənləşdir, KPI hesabla və biznes suallarına cavab ver. Analitik düşüncəni sına!</p>
+      </div>
+      <div class="hero-visual" aria-label="Animated data chart">
+        <div class="visual-head"><span data-t="chartTitle">SALES ANALYTICS</span><span>LIVE DATA</span></div>
+        <div class="bars">
+          <div class="bar" style="height:44%" data-label="N"></div>
+          <div class="bar" style="height:72%" data-label="S"></div>
+          <div class="bar" style="height:58%" data-label="W"></div>
+          <div class="bar" style="height:34%" data-label="E"></div>
+          <div class="bar" style="height:88%" data-label="Q"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-layout" aria-label="Data analytics game">
+      <div class="card game-card">
+        <div class="card-top">
+          <div class="card-kicker" data-t="case">CASE FILE 001 · RETAIL SALES</div>
+          <span class="round" id="roundLabel">1 / 4</span>
+        </div>
+        <div class="progress"><span id="progressBar"></span></div>
+
+        <div id="playArea">
+          <h2 id="questionTitle">Məlumat keyfiyyəti: təkrarlanan sətri tap</h2>
+          <p class="question-copy" id="questionCopy">Cədvəldə eyni əməliyyat iki dəfə daxil edilib. Hansı Transaction ID təkrarlanır?</p>
+
+          <div class="dataset-wrap">
+            <table>
+              <thead><tr>
+                <th data-t="thId">Transaction ID</th><th data-t="thRegion">Region</th><th data-t="thProduct">Product</th>
+                <th data-t="thQty">Qty</th><th data-t="thPrice">Unit price</th><th data-t="thRevenue">Revenue</th>
+              </tr></thead>
+              <tbody>
+                <tr><td>TX-101</td><td data-t="north">North</td><td>Laptop</td><td>2</td><td>800</td><td>1,600</td></tr>
+                <tr><td>TX-102</td><td data-t="south">South</td><td>Monitor</td><td>3</td><td>250</td><td>750</td></tr>
+                <tr><td>TX-103</td><td data-t="north">North</td><td>Keyboard</td><td>5</td><td>40</td><td>200</td></tr>
+                <tr><td>TX-104</td><td data-t="west">West</td><td>Laptop</td><td>1</td><td>800</td><td>800</td></tr>
+                <tr><td>TX-104</td><td data-t="west">West</td><td>Laptop</td><td>1</td><td>800</td><td>800</td></tr>
+                <tr><td>TX-105</td><td data-t="south">South</td><td>Mouse</td><td>4</td><td>25</td><td>100</td></tr>
+                <tr><td>TX-106</td><td data-t="east">East</td><td>Monitor</td><td>2</td><td>250</td><td>500</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="question-label" data-t="choose">CAVABI SEÇ</div>
+          <div class="answers" id="answers"></div>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          <div class="next-row">
+            <button class="hint" id="hintBtn" type="button" data-t="hint">İpucu göstər</button>
+            <button class="next" id="nextBtn" type="button" disabled data-t="next">Növbəti mərhələ →</button>
+          </div>
+        </div>
+
+        <div class="result" id="resultPanel">
+          <div class="result-icon">✓</div>
+          <div class="card-kicker" data-t="completed">CHALLENGE COMPLETED</div>
+          <h2 id="resultTitle">Əla iş!</h2>
+          <p id="resultCopy"></p>
+          <button class="next" id="restartBtn" type="button" data-t="restart">Yenidən oyna</button>
+          <a class="back" href="index.html" data-t="portfolioLink">Portfolioma qayıt</a>
+        </div>
+      </div>
+
+      <aside class="side">
+        <div class="card score-card">
+          <div class="score-label" data-t="scoreLabel">SƏNİN NƏTİCƏN</div>
+          <div class="score-value"><span id="score">0</span><span> / 100</span></div>
+          <div class="score-note" id="scoreNote" data-t="scoreNote">Hər düzgün cavab 25 baldır.</div>
+          <div class="metric-grid">
+            <div class="metric"><strong>7</strong><span data-t="rows">Dataset sətirləri</span></div>
+            <div class="metric"><strong>1</strong><span data-t="duplicates">Təkrarlanan qeyd</span></div>
+            <div class="metric"><strong>3,950</strong><span data-t="cleanRevenue">Təmiz gəlir (AZN)</span></div>
+            <div class="metric"><strong>4</strong><span data-t="tasks">Analitik tapşırıq</span></div>
+          </div>
+        </div>
+
+        <div class="card insight-card">
+          <h3 data-t="regionTitle">Regionlar üzrə gəlir</h3>
+          <div class="insight-row"><span data-t="north">North</span><strong>1,800 AZN</strong></div><div class="track"><span style="width:100%"></span></div>
+          <div class="insight-row"><span data-t="south">South</span><strong>850 AZN</strong></div><div class="track"><span style="width:47.2%"></span></div>
+          <div class="insight-row"><span data-t="west">West</span><strong>800 AZN</strong></div><div class="track"><span style="width:44.4%"></span></div>
+          <div class="insight-row"><span data-t="east">East</span><strong>500 AZN</strong></div><div class="track"><span style="width:27.8%"></span></div>
+        </div>
+
+        <div class="card tip">
+          <strong data-t="analystTip">ANALYST TIP</strong><br>
+          <span data-t="tipCopy">Yaxşı analitika məlumatı sadəcə oxumaq deyil: əvvəlcə keyfiyyətini yoxla, sonra hesabla, müqayisə et və nəticəni biznes dilində izah et.</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="shell footer">© <span id="year"></span> Rasim Abdullayev · <span data-t="footer">Data Analytics Mini Game</span></footer>
+
+  <script>
+    const translations = {
+      az: {
+        eyebrow:"İNTERAKTİV DATA ANALİTİKA SINAĞI",title:"Data Detective",subtitle:"Məlumatı araşdır. Nəticəni tap.",
+        intro:"Kiçik bir satış datasını analiz et, təkrarlanan sətri müəyyənləşdir, KPI hesabla və biznes suallarına cavab ver. Analitik düşüncəni sına!",
+        chartTitle:"SATIŞ ANALİTİKASI",case:"CASE FILE 001 · RETAIL SALES",round:"Mərhələ",
+        q:[
+          ["Məlumat keyfiyyəti: təkrarlanan sətri tap","Cədvəldə eyni əməliyyat iki dəfə daxil edilib. Hansı Transaction ID təkrarlanır?","TX-102","TX-104","TX-105","TX-106","Düzgün cavab: TX-104. Bu əməliyyat iki dəfə qeydə alınıb. Təkrarlanan sətrin silinməsi gəlirin iki dəfə hesablanmasının qarşısını alır.","Sətirlərin regionuna və məbləğinə deyil, Transaction ID dəyərinə diqqət yetir."],
+          ["KPI hesablanması: təmiz ümumi gəlir","Təkrarlanan əməliyyatı çıxardıqdan sonra ümumi gəlir nə qədərdir? Bütün unikal əməliyyatların Revenue dəyərlərini topla.","3,950 AZN","4,750 AZN","3,150 AZN","4,250 AZN","Düzgün cavab: 3,950 AZN. 4,750 AZN ilkin cəmdir; 800 AZN-lik təkrarlanan əməliyyatı çıxanda 3,950 AZN qalır.","Əvvəlcə bütün gəlirləri topla, sonra təkrarlanan 800 AZN-i yalnız bir dəfə hesabla."],
+          ["Biznes analizi: ən yüksək gəlirli region","Təkrarlanan sətri çıxardıqdan sonra hansı region ən yüksək ümumi gəlir yaradıb?","South","East","North","West","Düzgün cavab: North. Bu regionun gəliri 1,600 + 200 = 1,800 AZN-dir.","Region üzrə Revenue dəyərlərini qruplaşdır və cəmlə."],
+          ["SQL məntiqi: sətirləri filtrlə","SQL sorğusunda Revenue > 500 şərtinə uyğun sətirləri seçmək üçün hansı operator istifadə olunur?","GROUP BY","ORDER BY","WHERE","JOIN","Düzgün cavab: WHERE. WHERE şərtə uyğun sətirləri filtrləyir; GROUP BY qruplaşdırır, ORDER BY sıralayır, JOIN cədvəlləri birləşdirir.","SQL-də filtr şərti SELECT-dən sonra WHERE ilə yazılır."]
+        ],
+        thId:"Transaction ID",thRegion:"Region",thProduct:"Məhsul",thQty:"Say",thPrice:"Vahid qiymət",thRevenue:"Gəlir",
+        north:"Şimal",south:"Cənub",west:"Qərb",east:"Şərq",duplicate:"DUBLİKAT",
+        choose:"CAVABI SEÇ",hint:"İpucu göstər",next:"Növbəti mərhələ →",check:"Cavabı yoxla",
+        correct:"Düzgün cavab!",incorrect:"Bu dəfə düzgün deyil.",completed:"SINAQ TAMAMLANDI",
+        scoreLabel:"SƏNİN NƏTİCƏN",scoreNote:"Hər düzgün cavab 25 baldır.",rows:"Dataset sətirləri",
+        duplicates:"Təkrarlanan qeyd",cleanRevenue:"Təmiz gəlir (AZN)",tasks:"Analitik tapşırıq",
+        regionTitle:"Regionlar üzrə gəlir",analystTip:"ANALİTİKİN QEYDİ",
+        tipCopy:"Yaxşı analitika məlumatı sadəcə oxumaq deyil: əvvəlcə keyfiyyətini yoxla, sonra hesabla, müqayisə et və nəticəni biznes dilində izah et.",
+        restart:"Yenidən oyna",portfolioLink:"Portfolioma qayıt",footer:"Data Analitika Mini Oyunu",
+        resultExcellent:"Əla iş! Sən məlumat keyfiyyətini yoxladın, KPI hesabladın və SQL məntiqini tətbiq etdin.",
+        resultGood:"Yaxşı nəticə! Bir neçə analitik addımı düzgün yerinə yetirdin. Yenidən oynayıb nəticəni yüksəldə bilərsən.",
+        resultTry:"Bu, başlanğıcdır. Cədvəli yenidən araşdır və analitik tapşırıqları təkrar sına.",
+        back:"← Portfolio"
+      },
+      en: {
+        eyebrow:"INTERACTIVE DATA ANALYTICS CHALLENGE",title:"Data Detective",subtitle:"Explore the data. Find the insight.",
+        intro:"Explore a small sales dataset, detect a duplicate record, calculate a KPI and answer business questions. Test your analytical thinking.",
+        chartTitle:"SALES ANALYTICS",case:"CASE FILE 001 · RETAIL SALES",round:"Round",
+        q:[
+          ["Data quality: find the duplicate","The same transaction appears twice. Which Transaction ID is duplicated?","TX-102","TX-104","TX-105","TX-106","Correct: TX-104. This transaction was recorded twice. Removing the duplicate prevents revenue from being counted twice.","Focus on the Transaction ID, not only the region or amount."],
+          ["KPI calculation: clean total revenue","After removing the duplicate transaction, what is the total revenue? Sum the Revenue values for all unique transactions.","3,950 AZN","4,750 AZN","3,150 AZN","4,250 AZN","Correct: 3,950 AZN. The original total is 4,750 AZN; subtracting the duplicated 800 AZN leaves 3,950 AZN.","Sum all revenue values, then remove the duplicated 800 AZN once."],
+          ["Business analysis: top-performing region","After removing the duplicate, which region generated the highest total revenue?","South","East","North","West","Correct: North. Its revenue is 1,600 + 200 = 1,800 AZN.","Group revenue by region and compare the totals."],
+          ["SQL logic: filter records","Which SQL clause selects rows that meet the condition Revenue > 500?","GROUP BY","ORDER BY","WHERE","JOIN","Correct: WHERE. WHERE filters rows, GROUP BY aggregates them, ORDER BY sorts them, and JOIN combines tables.","In SQL, row-level conditions are written with WHERE."]
+        ],
+        thId:"Transaction ID",thRegion:"Region",thProduct:"Product",thQty:"Qty",thPrice:"Unit price",thRevenue:"Revenue",
+        north:"North",south:"South",west:"West",east:"East",duplicate:"DUPLICATE",
+        choose:"CHOOSE YOUR ANSWER",hint:"Show hint",next:"Next challenge →",check:"Check answer",
+        correct:"Correct answer!",incorrect:"Not quite.",completed:"CHALLENGE COMPLETED",
+        scoreLabel:"YOUR SCORE",scoreNote:"Each correct answer is worth 25 points.",rows:"Dataset rows",
+        duplicates:"Duplicate record",cleanRevenue:"Clean revenue (AZN)",tasks:"Analytics tasks",
+        regionTitle:"Revenue by region",analystTip:"ANALYST TIP",
+        tipCopy:"Good analytics is more than reading data: validate quality first, calculate, compare, then explain the result in business terms.",
+        restart:"Play again",portfolioLink:"Back to my portfolio",footer:"Data Analytics Mini Game",
+        resultExcellent:"Excellent work! You checked data quality, calculated a KPI and applied SQL logic.",
+        resultGood:"Good result! You completed several analytical steps correctly. Play again to improve your score.",
+        resultTry:"A good starting point. Review the table and try the analytical tasks again.",
+        back:"← Portfolio"
+      },
+      ru: {
+        eyebrow:"ИНТЕРАКТИВНОЕ ЗАДАНИЕ ПО АНАЛИТИКЕ ДАННЫХ",title:"Data Detective",subtitle:"Исследуй данные. Найди вывод.",
+        intro:"Проанализируй небольшой набор данных о продажах, найди дубликат, рассчитай KPI и ответь на бизнес-вопросы. Проверь аналитическое мышление.",
+        chartTitle:"АНАЛИТИКА ПРОДАЖ",case:"ДЕЛО 001 · РОЗНИЧНЫЕ ПРОДАЖИ",round:"Раунд",
+        q:[
+          ["Качество данных: найди дубликат","Одна и та же транзакция внесена дважды. Какой Transaction ID повторяется?","TX-102","TX-104","TX-105","TX-106","Правильный ответ: TX-104. Эта транзакция записана дважды. Удаление дубликата предотвращает двойной учёт выручки.","Обрати внимание на Transaction ID, а не только на регион или сумму."],
+          ["Расчёт KPI: чистая выручка","Какова общая выручка после удаления повторной транзакции? Сложи значения Revenue для всех уникальных операций.","3 950 AZN","4 750 AZN","3 150 AZN","4 250 AZN","Правильный ответ: 3 950 AZN. Первоначальная сумма — 4 750 AZN; после вычитания дубликата на 800 AZN остаётся 3 950 AZN.","Сначала сложи все значения, затем исключи повторные 800 AZN."],
+          ["Бизнес-анализ: регион с максимальной выручкой","Какой регион получил наибольшую общую выручку после удаления дубликата?","Юг","Восток","Север","Запад","Правильный ответ: Север. Выручка региона составляет 1 600 + 200 = 1 800 AZN.","Сгруппируй выручку по регионам и сравни суммы."],
+          ["Логика SQL: фильтрация записей","Какой оператор SQL выбирает строки, соответствующие условию Revenue > 500?","GROUP BY","ORDER BY","WHERE","JOIN","Правильный ответ: WHERE. WHERE фильтрует строки, GROUP BY группирует, ORDER BY сортирует, JOIN объединяет таблицы.","Условия фильтрации строк задаются с помощью WHERE."]
+        ],
+        thId:"Transaction ID",thRegion:"Регион",thProduct:"Товар",thQty:"Кол-во",thPrice:"Цена за ед.",thRevenue:"Выручка",
+        north:"Север",south:"Юг",west:"Запад",east:"Восток",duplicate:"ДУБЛИКАТ",
+        choose:"ВЫБЕРИ ОТВЕТ",hint:"Показать подсказку",next:"Следующее задание →",check:"Проверить ответ",
+        correct:"Верно!",incorrect:"Не совсем.",completed:"ЗАДАНИЕ ЗАВЕРШЕНО",
+        scoreLabel:"ТВОЙ РЕЗУЛЬТАТ",scoreNote:"Каждый правильный ответ — 25 баллов.",rows:"Строк в наборе",
+        duplicates:"Дублирующая запись",cleanRevenue:"Чистая выручка (AZN)",tasks:"Аналитические задания",
+        regionTitle:"Выручка по регионам",analystTip:"СОВЕТ АНАЛИТИКА",
+        tipCopy:"Хорошая аналитика — это не просто чтение данных: сначала проверь качество, затем рассчитай показатели, сравни их и объясни результат с точки зрения бизнеса.",
+        restart:"Играть снова",portfolioLink:"Вернуться в портфолио",footer:"Мини-игра по аналитике данных",
+        resultExcellent:"Отличная работа! Ты проверил качество данных, рассчитал KPI и применил логику SQL.",
+        resultGood:"Хороший результат! Несколько аналитических этапов выполнены верно. Сыграй ещё раз, чтобы улучшить результат.",
+        resultTry:"Хорошее начало. Изучи таблицу и попробуй пройти задания ещё раз.",
+        back:"← Портфолио"
+      }
+    };
+
+    const state = { lang:"az", round:0, score:0, answered:false, hintUsed:false };
+    const $ = s => document.querySelector(s);
+    const t = key => translations[state.lang][key];
+    const questions = () => translations[state.lang].q;
+
+    function applyLanguage(lang) {
+      state.lang = lang;
+      localStorage.setItem("portfolio-language", lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-t]").forEach(el => {
+        const key = el.dataset.t;
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll("[data-lang]").forEach(btn => btn.classList.toggle("active",btn.dataset.lang===lang));
+      $("#backLink").textContent = t("back");
+      renderQuestion();
+      updateScore();
+    }
+
+    function updateScore() {
+      $("#score").textContent = state.score;
+      $("#roundLabel").textContent = `${t("round")} ${Math.min(state.round+1,4)} / 4`;
+      $("#progressBar").style.width = `${(state.round/4)*100}%`;
+    }
+
+    function renderQuestion() {
+      const q = questions()[state.round];
+      if (!q) return;
+      $("#questionTitle").textContent = q[0];
+      $("#questionCopy").textContent = q[1];
+      $("#answers").innerHTML = q.slice(2,6).map((answer,index) =>
+        `<button class="answer" type="button" data-answer="${index}">${answer}</button>`).join("");
+      $("#feedback").className = "feedback";
+      $("#feedback").textContent = "";
+      $("#nextBtn").disabled = true;
+      $("#nextBtn").textContent = state.round===3 ? (state.lang==="az"?"Nəticəni göstər →":state.lang==="ru"?"Показать результат →":"Show results →") : t("next");
+      state.answered = false;
+      state.hintUsed = false;
+      $("#hintBtn").disabled = false;
+      $("#hintBtn").style.opacity = "1";
+      updateScore();
+      document.querySelectorAll(".answer").forEach(btn => btn.addEventListener("click", () => chooseAnswer(Number(btn.dataset.answer))));
+    }
+
+    function chooseAnswer(index) {
+      if (state.answered) return;
+      state.answered = true;
+      const q = questions()[state.round];
+      const correctIndex = [1,0,2,2][state.round];
+      const correct = index === correctIndex;
+      if (correct) state.score += 25;
+      document.querySelectorAll(".answer").forEach((btn,i) => {
+        btn.disabled = true;
+        if (i===correctIndex) btn.classList.add("correct");
+        if (i===index && !correct) btn.classList.add("wrong");
+      });
+      $("#feedback").classList.add("show");
+      $("#feedback").innerHTML = `<strong>${correct ? t("correct") : t("incorrect")}</strong> ${q[6]}`;
+      $("#nextBtn").disabled = false;
+      $("#hintBtn").disabled = true;
+      $("#hintBtn").style.opacity = ".35";
+      updateScore();
+    }
+
+    function showHint() {
+      if (state.answered || state.hintUsed) return;
+      state.hintUsed = true;
+      const q = questions()[state.round];
+      $("#feedback").classList.add("show");
+      $("#feedback").textContent = `${state.lang==="az"?"İpucu:":state.lang==="ru"?"Подсказка:":"Hint:"} ${q[7]}`;
+      $("#hintBtn").disabled = true;
+      $("#hintBtn").style.opacity = ".35";
+    }
+
+    function nextQuestion() {
+      if (!state.answered) return;
+      state.round += 1;
+      if (state.round >= 4) return finishGame();
+      renderQuestion();
+    }
+
+    function finishGame() {
+      $("#playArea").style.display = "none";
+      $("#resultPanel").classList.add("show");
+      $("#progressBar").style.width = "100%";
+      $("#roundLabel").textContent = "4 / 4";
+      const key = state.score===100 ? "resultExcellent" : state.score>=50 ? "resultGood" : "resultTry";
+      $("#resultTitle").textContent = state.score===100
+        ? (state.lang==="az"?"Analitik ustalıq!":state.lang==="ru"?"Аналитическое мастерство!":"Analytical mastery!")
+        : state.score>=50 ? (state.lang==="az"?"Yaxşı nəticə!":state.lang==="ru"?"Хороший результат!":"Good work!")
+        : (state.lang==="az"?"Davam et!":state.lang==="ru"?"Продолжай!":"Keep learning!");
+      $("#resultCopy").textContent = `${state.score}/100 — ${t(key)}`;
+    }
+
+    function restartGame() {
+      state.round=0;state.score=0;state.answered=false;state.hintUsed=false;
+      $("#playArea").style.display="block";
+      $("#resultPanel").classList.remove("show");
+      renderQuestion();
+    }
+
+    document.querySelectorAll("[data-lang]").forEach(btn => btn.addEventListener("click",()=>applyLanguage(btn.dataset.lang)));
+    $("#hintBtn").addEventListener("click",showHint);
+    $("#nextBtn").addEventListener("click",nextQuestion);
+    $("#restartBtn").addEventListener("click",restartGame);
+    $("#year").textContent=new Date().getFullYear();
+    const savedLang=localStorage.getItem("portfolio-language");
+    const validLang=["az","en","ru"].includes(savedLang)?savedLang:"az";
+    applyLanguage(validLang);
+  </script>
+</body>
+</html>
